@@ -9,24 +9,30 @@ const ArrowRight = ({ color = 'white' }) => (
   </svg>
 )
 
-const services = [
+const categories = [
   {
-    icon: '📱',
+    icon: '🧠',
     colorClass: 'icon-box-blue',
-    title: 'Gestão de Redes Sociais',
-    desc: 'Planejamento e execução completa do seu conteúdo com consistência e estratégia.',
+    title: 'Gestão e Estratégia',
+    desc: 'Direção e inteligência de dados para quem precisa de um norte claro no digital.',
   },
   {
-    icon: '🎨',
-    colorClass: 'icon-box-purple',
-    title: 'Criação de Conteúdo Visual',
-    desc: 'Posts, stories e reels com identidade visual alinhada à sua marca.',
-  },
-  {
-    icon: '🎯',
+    icon: '✍️',
     colorClass: 'icon-box-amber',
-    title: 'Estratégia Digital',
-    desc: 'Posicionamento, análise do público e plano de conteúdo personalizado.',
+    title: 'Produção e Escrita',
+    desc: 'Conteúdo, visual e relatórios de alta qualidade que entregam resultado real.',
+  },
+  {
+    icon: '🌐',
+    colorClass: 'icon-box-purple',
+    title: 'Infraestrutura Web',
+    desc: 'Landing pages, site institucional e Google Meu Negócio — ativos que trabalham por você 24h.',
+  },
+  {
+    icon: '⚙️',
+    colorClass: 'icon-box-green',
+    title: 'Ecossistema e Automação',
+    desc: 'Tecnologia para escalar: automações de direct, CRM e hubs de links que não perdem nenhum lead.',
   },
 ]
 
@@ -43,7 +49,7 @@ export default function Home() {
         alignItems: 'center',
         position: 'relative',
         overflow: 'hidden',
-        padding: '60px 0 80px',
+        padding: '60px 0 80px'
       }}>
         {/* Blobs */}
         <div style={{ position: 'absolute', top: '-5%', right: '0', width: 550, height: 550, borderRadius: '50%', background: 'radial-gradient(circle, rgba(148,176,237,0.45) 0%, transparent 65%)', filter: 'blur(70px)', pointerEvents: 'none', animation: 'pulse-glow 6s ease-in-out infinite' }} />
@@ -52,13 +58,8 @@ export default function Home() {
 
         <div className="container" style={{ position: 'relative', zIndex: 1, width: '100%' }}>
           <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center' }}>
-
             {/* ── Left: Text ── */}
             <div>
-              <div className="tag tag-blue fade-up" style={{ marginBottom: 28 }}>
-                <span>✦</span> Social Media Estratégico
-              </div>
-
               {/* Title com decorações flutuantes */}
               <div style={{ position: 'relative', display: 'inline-block', marginBottom: 24 }} className="fade-up delay-1">
                 {/* Raio — canto superior direito */}
@@ -101,14 +102,14 @@ export default function Home() {
                 }}>😎</span>
 
                 <h1 style={{ fontSize: 'clamp(40px, 5.5vw, 68px)', fontWeight: 800, lineHeight: 1.08, color: '#3e3a53', margin: 0 }}>
-                  O fim da<br />
-                  <span style={{ color: '#3367ca' }}>inconstância</span><br />
-                  no seu perfil.
+                  Construindo a infraestrutura digital que <br />
+                  <span style={{ color: '#3367ca' }}>transforma</span><br />
+                  seguidores em ativos de venda.
                 </h1>
               </div>
 
               <p style={{ fontSize: 18, color: '#8a88a0', lineHeight: 1.75, marginBottom: 40, maxWidth: 460 }} className="fade-up delay-2">
-                Conteúdo estratégico, visual consistente e presença digital que transforma seguidores em clientes.
+                Soluções modulares de estratégia, conteúdo e tecnologia para empresas que buscam escala e profissionalismo.
               </p>
 
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }} className="fade-up delay-3">
@@ -118,20 +119,6 @@ export default function Home() {
                 <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
                   Falar no WhatsApp
                 </a>
-              </div>
-
-              {/* Stats */}
-              <div className="fade-up delay-4" style={{ display: 'flex', gap: 40, marginTop: 52, paddingTop: 40, borderTop: '1px solid rgba(62,58,83,0.08)' }}>
-                {[
-                  { num: '50+',   label: 'Clientes atendidos' },
-                  { num: '3 anos', label: 'De experiência' },
-                  { num: '100%',  label: 'Dedicação' },
-                ].map(s => (
-                  <div key={s.label}>
-                    <div style={{ fontSize: 28, fontWeight: 800, color: '#3e3a53' }}>{s.num}</div>
-                    <div style={{ fontSize: 13, color: '#8a88a0', marginTop: 2 }}>{s.label}</div>
-                  </div>
-                ))}
               </div>
             </div>
 
@@ -196,7 +183,7 @@ export default function Home() {
             fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase',
             margin: '28px 0',
           }}>
-            Conteúdo estratégico · Visual consistente · Crescimento real
+            Estratégia · Conteúdo · Infraestrutura Web · Automação
           </p>
           <div className="divider" />
         </div>
@@ -208,28 +195,30 @@ export default function Home() {
           <div style={{ textAlign: 'center', marginBottom: 64 }}>
             <div className="tag tag-amber fade-up" style={{ marginBottom: 16 }}>✦ O que eu faço</div>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', marginBottom: 16 }} className="fade-up delay-1">
-              Soluções que fazem<br />seu perfil crescer
+              Um ecossistema completo<br />para o seu negócio
             </h2>
-            <p style={{ fontSize: 17, color: '#8a88a0', maxWidth: 500, margin: '0 auto' }} className="fade-up delay-2">
-              Do planejamento à execução, cuido de tudo para que sua marca brilhe no digital.
+            <p style={{ fontSize: 17, color: '#8a88a0', maxWidth: 520, margin: '0 auto' }} className="fade-up delay-2">
+              Da estratégia à tecnologia, construo a infraestrutura digital que transforma sua presença em resultado.
             </p>
           </div>
 
-          <div className="grid-3">
-            {services.map((s, i) => (
-              <div key={s.title} className={`card fade-up delay-${i + 1}`} style={{ textAlign: 'center', padding: '40px 28px' }}>
-                <div className={`icon-box ${s.colorClass}`} style={{ margin: '0 auto 20px', width: 64, height: 64, borderRadius: 20, fontSize: 28 }}>
+          <div className="categories-grid fade-up delay-1">
+            {categories.map((s, i) => (
+              <div key={s.title} className={`card`} style={{ display: 'flex', alignItems: 'flex-start', gap: 20, padding: '32px 28px' }}>
+                <div className={`icon-box ${s.colorClass}`} style={{ flexShrink: 0, width: 56, height: 56, borderRadius: 18, fontSize: 24 }}>
                   {s.icon}
                 </div>
-                <h3 style={{ fontSize: 17, marginBottom: 10 }}>{s.title}</h3>
-                <p style={{ fontSize: 14, color: '#8a88a0', lineHeight: 1.65 }}>{s.desc}</p>
+                <div>
+                  <h3 style={{ fontSize: 17, marginBottom: 8 }}>{s.title}</h3>
+                  <p style={{ fontSize: 14, color: '#8a88a0', lineHeight: 1.65 }}>{s.desc}</p>
+                </div>
               </div>
             ))}
           </div>
 
           <div style={{ textAlign: 'center', marginTop: 48 }} className="fade-up">
-            <Link to="/solucoes" className="btn btn-outline">
-              Ver todas as soluções <ArrowRight color="#3367ca" />
+            <Link to="/solucoes" className="btn btn-primary">
+              Montar meu ecossistema <ArrowRight />
             </Link>
           </div>
         </div>
@@ -257,10 +246,10 @@ export default function Home() {
             <div className="fade-up" style={{ position: 'relative', zIndex: 1 }}>
               <div className="tag tag-white" style={{ marginBottom: 24 }}>✦ Sobre mim</div>
               <h2 style={{ fontSize: 'clamp(24px, 3.5vw, 38px)', color: 'white', marginBottom: 20 }}>
-                Consistência é a chave do crescimento digital
+                Estratégia, tecnologia e conteúdo no mesmo lugar
               </h2>
               <p style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.75, fontSize: 16, marginBottom: 36 }}>
-                Sou Emily Comin, especialista em Social Media. Meu trabalho é transformar perfis irregulares em marcas digitais fortes — com conteúdo estratégico e presença que converte.
+                Sou Emily Comin, especialista em infraestrutura digital. Combino estratégia de conteúdo, design e tecnologia para transformar negócios em marcas que vendem — online e offline.
               </p>
               <Link to="/sobre" className="btn btn-ghost">
                 Conhecer minha história <ArrowRight color="#3e3a53" />
@@ -297,17 +286,17 @@ export default function Home() {
 
             <div className="tag tag-blue fade-up" style={{ marginBottom: 20 }}>✦ Vamos começar?</div>
             <h2 style={{ fontSize: 'clamp(28px, 4.5vw, 48px)', marginBottom: 16 }} className="fade-up delay-1">
-              Pronta para transformar<br />seu perfil?
+              Pronta para construir<br />seu ecossistema digital?
             </h2>
             <p style={{ fontSize: 17, color: '#8a88a0', maxWidth: 480, margin: '0 auto 44px' }} className="fade-up delay-2">
-              Entre em contato e descubra como posso ajudar sua marca a crescer com consistência e estratégia.
+              Entre em contato e descubra como posso ajudar sua marca a crescer com estratégia, conteúdo e tecnologia.
             </p>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }} className="fade-up delay-3">
               <Link to="/contato" className="btn btn-primary">
                 Solicitar proposta <ArrowRight />
               </Link>
               <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
-                WhatsApp direto
+                Montar meu pacote
               </a>
             </div>
           </div>
@@ -315,9 +304,15 @@ export default function Home() {
       </section>
 
       <style>{`
+        .categories-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
+        }
         @media (max-width: 900px) {
           .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
           .dark-section-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+          .categories-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </div>
