@@ -4,7 +4,7 @@
     {
       "name": "emily-site",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "runtimeArgs": ["run", "dev", "--", "--force"],
       "port": 5173
     }
   ]

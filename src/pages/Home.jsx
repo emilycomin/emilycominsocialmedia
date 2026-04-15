@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import useScrollReveal from '../hooks/useScrollReveal'
 
-const WA_LINK = 'https://wa.me/5500000000000'
+const WA_LINK = 'https://wa.me/+5551991336280'
 
 const ArrowRight = ({ color = 'white' }) => (
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -59,11 +59,53 @@ export default function Home() {
                 <span>✦</span> Social Media Estratégico
               </div>
 
-              <h1 style={{ fontSize: 'clamp(40px, 5.5vw, 68px)', fontWeight: 800, lineHeight: 1.08, color: '#3e3a53', marginBottom: 24 }} className="fade-up delay-1">
-                O fim da<br />
-                <span style={{ color: '#3367ca' }}>inconstância</span><br />
-                no seu perfil.
-              </h1>
+              {/* Title com decorações flutuantes */}
+              <div style={{ position: 'relative', display: 'inline-block', marginBottom: 24 }} className="fade-up delay-1">
+                {/* Raio — canto superior direito */}
+                <span style={{
+                  position: 'absolute',
+                  top: -18,
+                  right: -40,
+                  fontSize: 34,
+                  filter: 'drop-shadow(0 2px 6px rgba(232,161,78,0.55))',
+                  animation: 'float 3s ease-in-out infinite',
+                  lineHeight: 1,
+                  pointerEvents: 'none',
+                  userSelect: 'none',
+                }}>⚡</span>
+
+                {/* Estrelas — canto inferior esquerdo */}
+                <span style={{
+                  position: 'absolute',
+                  bottom: 10,
+                  left: -44,
+                  fontSize: 26,
+                  filter: 'drop-shadow(0 2px 6px rgba(232,161,78,0.5))',
+                  animation: 'float 4s ease-in-out infinite 1s',
+                  lineHeight: 1,
+                  pointerEvents: 'none',
+                  userSelect: 'none',
+                }}>✨</span>
+
+                {/* Emoji óculos — canto inferior direito */}
+                <span style={{
+                  position: 'absolute',
+                  bottom: -24,
+                  right: -48,
+                  fontSize: 28,
+                  filter: 'drop-shadow(0 2px 8px rgba(51,103,202,0.3))',
+                  animation: 'float 3.5s ease-in-out infinite 0.5s',
+                  lineHeight: 1,
+                  pointerEvents: 'none',
+                  userSelect: 'none',
+                }}>😎</span>
+
+                <h1 style={{ fontSize: 'clamp(40px, 5.5vw, 68px)', fontWeight: 800, lineHeight: 1.08, color: '#3e3a53', margin: 0 }}>
+                  O fim da<br />
+                  <span style={{ color: '#3367ca' }}>inconstância</span><br />
+                  no seu perfil.
+                </h1>
+              </div>
 
               <p style={{ fontSize: 18, color: '#8a88a0', lineHeight: 1.75, marginBottom: 40, maxWidth: 460 }} className="fade-up delay-2">
                 Conteúdo estratégico, visual consistente e presença digital que transforma seguidores em clientes.
