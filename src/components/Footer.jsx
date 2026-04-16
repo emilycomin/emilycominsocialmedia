@@ -54,12 +54,12 @@ export default function Footer() {
               <span style={{ color: 'white', fontWeight: 700, fontSize: 16 }}>Emily Comin</span>
             </Link>
             <p style={{ fontSize: 14, lineHeight: 1.7, color: 'rgba(255,255,255,0.6)', maxWidth: 280, marginBottom: 24 }}>
-              O fim da inconstância no seu perfil. Gestão de redes sociais com estratégia e consistência.
+              O fim da inconstância no seu perfil. Gestão de Negócios Digiais com estratégia e consistência.
             </p>
             {/* Social */}
             <div style={{ display: 'flex', gap: 12 }}>
               {[
-                { href: '#', label: 'Instagram', icon: <InstagramIcon /> },
+                { href: 'https://instagram.com.br/emilycominn', label: 'Instagram', icon: <InstagramIcon /> },
                 { href: WA_LINK, label: 'WhatsApp', icon: <WhatsAppIcon /> },
               ].map(s => (
                 <a
@@ -145,7 +145,7 @@ export default function Footer() {
           gap: 16,
         }}>
           <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)' }}>
-            © {year} Emily Comin · Social Media. Todos os direitos reservados.
+            © {year} Emily Comin · Social Media - CNPJ: 12.345.678/0001-90. Todos os direitos reservados.
           </p>
           <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)' }}>
             Feito com ✦ para marcas que querem crescer

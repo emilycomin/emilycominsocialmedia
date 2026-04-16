@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Solucoes from './pages/Solucoes'
 import SobreMim from './pages/SobreMim'
 import Contato from './pages/Contato'
+import { Analytics } from "@vercel/analytics/react"
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -18,6 +19,7 @@ function ScrollToTop() {
 export default function App() {
   return (
     <>
+    <Analytics />  
       <ScrollToTop />
       <Navbar />
       <main>

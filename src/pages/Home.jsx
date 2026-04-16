@@ -104,7 +104,7 @@ export default function Home() {
                 <h1 style={{ fontSize: 'clamp(40px, 5.5vw, 68px)', fontWeight: 800, lineHeight: 1.08, color: '#3e3a53', margin: 0 }}>
                   Construindo a infraestrutura digital que <br />
                   <span style={{ color: '#3367ca' }}>transforma</span><br />
-                  seguidores em ativos de venda.
+                  seguidores em clientes.
                 </h1>
               </div>
 
