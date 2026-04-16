@@ -249,7 +249,7 @@ export default function Home() {
                 Estratégia, tecnologia e conteúdo no mesmo lugar
               </h2>
               <p style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.75, fontSize: 16, marginBottom: 36 }}>
-                Sou Emily Comin, especialista em infraestrutura digital. Combino estratégia de conteúdo, design e tecnologia para transformar negócios em marcas que vendem — online e offline.
+                Sou Emily Comin, especialista em infraestrutura digital. Minha missão é acabar com a inconstância e o amadorismo no digital, entregando soluções completas que geram resultados reais, cominando estratégia de conteúdo, design e tecnologia.
               </p>
               <Link to="/sobre" className="btn btn-ghost">
                 Conhecer minha história <ArrowRight color="#3e3a53" />
