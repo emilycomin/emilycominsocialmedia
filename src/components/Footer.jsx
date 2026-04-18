@@ -92,9 +92,10 @@ export default function Footer() {
             </p>
             {[
               { to: '/', label: 'Início' },
-              { to: '/solucoes', label: 'Soluções' },
-              { to: '/sobre', label: 'Sobre mim' },
-              { to: '/contato', label: 'Contato' },
+              { to: '/solucoes',     label: 'Soluções' },
+              { to: '/infoprodutos', label: 'Infoprodutos' },
+              { to: '/sobre',        label: 'Sobre mim' },
+              { to: '/contato',      label: 'Contato' },
             ].map(l => (
               <Link
                 key={l.to}

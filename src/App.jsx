@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Solucoes from './pages/Solucoes'
 import SobreMim from './pages/SobreMim'
 import Contato from './pages/Contato'
+import Infoprodutos from './pages/Infoprodutos'
 import { Analytics } from "@vercel/analytics/react"
 
 function ScrollToTop() {
@@ -27,7 +28,8 @@ export default function App() {
           <Route path="/"         element={<Home />} />
           <Route path="/solucoes" element={<Solucoes />} />
           <Route path="/sobre"    element={<SobreMim />} />
-          <Route path="/contato"  element={<Contato />} />
+          <Route path="/contato"      element={<Contato />} />
+          <Route path="/infoprodutos" element={<Infoprodutos />} />
         </Routes>
       </main>
       <Footer />
