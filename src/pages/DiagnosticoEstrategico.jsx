@@ -116,8 +116,7 @@ export default function DiagnosticoEstrategico() {
             <span style={{ fontSize: 13, color: '#3367ca', fontWeight: 600 }}>Diagnóstico Estratégico</span>
           </div>
 
-          <div className="tag tag-purple fade-up" style={{ marginBottom: 20 }}>🔍 Serviço de Entrada</div>
-          <h1 className="fade-up delay-1" style={{ maxWidth: 700 }}>
+          <h1 className="fade-up delay-1" style={{ maxWidth: 700, textAlign: 'center', margin: '0 auto' }}>
             Diagnóstico Estratégico<br />+ Plano de Ação
           </h1>
           <p className="fade-up delay-2" style={{ marginTop: 16, maxWidth: 560, fontSize: 17, lineHeight: 1.75, color: '#5a5875' }}>
