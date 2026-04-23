@@ -94,6 +94,7 @@ export default function Footer() {
               { to: '/', label: 'Início' },
               { to: '/solucoes',     label: 'Soluções' },
               { to: '/infoprodutos', label: 'Infoprodutos' },
+              { to: '/faq',          label: 'FAQ' },
               { to: '/sobre',        label: 'Sobre mim' },
               { to: '/contato',      label: 'Contato' },
             ].map(l => (

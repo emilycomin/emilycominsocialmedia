@@ -53,13 +53,14 @@ const categories = [
         features: ['Diagnóstico Estratégico', '16 conteúdos', 'Copies e roteiros de reels', 'Entrega em 10 dias úteis'],
       },
       {
-        icon: '🎯',
+        icon: '🔍',
         colorClass: 'icon-box-purple',
-        title: 'Consultoria de Posicionamento',
-        badge: 'Novo',
+        title: 'Diagnóstico Estratégico',
+        badge: 'Serviço de Entrada',
         price: 800.00,
-        desc: '2 Encontros estratégicos para definir sua voz no digital. Ideal para profissionais que desejam gerir as próprias redes, mas precisam de um norte claro e orientações de especialistas.',
-        features: ['Diagnóstico estratégico', 'Material de apoio', 'Encontros ao vivo com especialista', 'Suporte pós-consultoria'],
+        desc: 'Análise completa do seu negócio em 5 pilares estratégicos. Entendemos onde você está, o que impede o crescimento e traçamos um plano de ação com metas para 30, 60 e 90 dias.',
+        features: ['Auditoria de perfil e posicionamento', 'Análise de público e mercado', 'Plano de ação documentado', 'Metas para 30, 60 e 90 dias'],
+        learnMoreLink: '/diagnostico',
       },
       {
         icon: '📱',
@@ -297,6 +298,26 @@ export default function Solucoes() {
                           {inCart ? '✓ Adicionado' : '+ Adicionar'}
                         </button>
                       </div>
+
+                      {/* Learn more link — only for services with learnMoreLink */}
+                      {s.learnMoreLink && (
+                        <Link
+                          to={s.learnMoreLink}
+                          style={{
+                            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6,
+                            width: '100%', padding: '9px 16px',
+                            borderRadius: 12,
+                            border: '1.5px solid rgba(51,103,202,0.2)',
+                            background: 'rgba(51,103,202,0.04)',
+                            color: '#3367ca',
+                            fontSize: 13, fontWeight: 700,
+                            textDecoration: 'none',
+                            transition: 'all 0.2s',
+                          }}
+                        >
+                          Conheça o Diagnóstico <ArrowRight color="#3367ca" />
+                        </Link>
+                      )}
                     </div>
                   )
                 })}
