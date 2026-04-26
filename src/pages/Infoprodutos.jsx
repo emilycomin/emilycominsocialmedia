@@ -48,7 +48,7 @@ const products = [
     subtitle: 'Do zero ao calendário completo',
     description:
       'O guia completo para você planejar, organizar e criar conteúdos estratégicos para o Instagram — com consistência e sem travar na frente do celular.',
-    price: 'Saiba mais',
+    price: 'R$ 97',
     priceNote: 'clique para ver os detalhes',
     features: [
       { icon: '🗓️', label: 'Calendário Editorial', desc: 'Planeje semanas inteiras de conteúdo de forma prática e visual' },
