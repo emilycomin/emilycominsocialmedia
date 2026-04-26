@@ -51,6 +51,7 @@ const categories = [
         price: 795.00,
         desc: 'Produção de roteiros, legendas e copies focadas em conversão. Entregamos o volume de conteúdo necessário para o seu mês com textos que vendem e conectam.',
         features: ['Diagnóstico Estratégico', '16 conteúdos', 'Copies e roteiros de reels', 'Entrega em 10 dias úteis'],
+        learnMoreLinkExternal: 'https://sprintdeconteudo.lovable.app/',
       },
       {
         icon: '🔍',
@@ -298,11 +299,27 @@ export default function Solucoes() {
                           {inCart ? '✓ Adicionado' : '+ Adicionar'}
                         </button>
                       </div>
-
+                      {/*Learn more link external  */}
+                      {s.learnMoreLinkExternal && (
+                        <Link
+                          to={s.learnMoreLinkExternal} target='blanck' rel="noopener noreferrer"
+                          style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6,
+                            width: '100%', padding: '9px 16px',
+                            borderRadius: 12,
+                            border: '1.5px solid rgba(51,103,202,0.2)',
+                            background: 'rgba(51,103,202,0.04)',
+                            color: '#3367ca',
+                            fontSize: 13, fontWeight: 700,
+                            textDecoration: 'none',
+                            transition: 'all 0.2s',
+                          }}
+                          >Saiba mais <ArrowRight color="#3367ca" />
+                          </Link>)
+                      }
                       {/* Learn more link — only for services with learnMoreLink */}
                       {s.learnMoreLink && (
                         <Link
-                          to={s.learnMoreLink}
+                          to={s.learnMoreLink} 
                           style={{
                             display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6,
                             width: '100%', padding: '9px 16px',
@@ -315,7 +332,7 @@ export default function Solucoes() {
                             transition: 'all 0.2s',
                           }}
                         >
-                          Conheça o Diagnóstico <ArrowRight color="#3367ca" />
+                          Saiba mais <ArrowRight color="#3367ca" />
                         </Link>
                       )}
                     </div>

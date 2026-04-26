@@ -17,11 +17,11 @@ export default function Navbar() {
   useEffect(() => setMenuOpen(false), [pathname])
 
   const navLinks = [
-    { to: '/solucoes',      label: 'Soluções' },
-    { to: '/infoprodutos',  label: 'Infoprodutos' },
-    { to: '/faq',           label: 'FAQ' },
-    { to: '/sobre',         label: 'Sobre mim' },
-    { to: '/contato',       label: 'Contato' },
+    { to: '/solucoes',         label: 'Soluções' },
+    { to: '/infoprodutos',     label: 'Infoprodutos' },
+    { to: '/faq',              label: 'FAQ' },
+    { to: '/sobre',            label: 'Sobre mim' },
+    { to: '/contato',          label: 'Contato' },
   ]
 
   return (

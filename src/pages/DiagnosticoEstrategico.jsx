@@ -34,29 +34,29 @@ const pillars = [
     number: '02',
     icon: '💎',
     title: 'Diferenciais Competitivos',
-    desc: 'O que torna esse negócio difícil de substituir. Mapeamos método de trabalho, posicionamento de preço, experiência do cliente e especialização — a partir do que o mercado enxerga, não da autopercepção.',
+    desc: 'O que torna esse negócio difícil de substituir. Mapeamos método de trabalho, posicionamento de preço, experiência do cliente e especialização — a partir do que o mercado enxerga, não da autopercepção da dona do negócio.',
     insight: 'Negócios que não sabem articular seus diferenciais competem por preço. Esse pilar resolve isso.',
   },
   {
     number: '03',
     icon: '🗣️',
     title: 'Tom de Voz',
-    desc: 'Se a comunicação soa como a empresa ou como qualquer outra. Auditamos como o negócio se comunica: nos textos, nas respostas, nos vídeos, nas propostas.',
+    desc: 'Se a comunicação soa como a empresa ou como qualquer outra. Auditamos como o negócio se comunica: nos textos, nas respostas, nos vídeos, nas propostas. Tom de voz não é estilo pessoal — é consistência estratégica.',
     insight: 'Uma empresa que fala de um jeito no feed e de outro no WhatsApp cria atrito invisível. Atrito invisível custa venda.',
   },
   {
     number: '04',
     icon: '🎯',
     title: 'Estudo de Público',
-    desc: 'Se o negócio está falando com quem realmente compra. Construímos o retrato comportamental da cliente ideal: o que ela valoriza, por que ela escolhe pagar mais, onde ela está no processo de decisão.',
+    desc: 'Se o negócio está falando com quem realmente compra. Construímos o retrato comportamental da cliente ideal: o que ela valoriza, por que ela escolhe pagar mais, onde ela está no processo de decisão quando encontra o negócio.',
     insight: 'A maioria das empresas cria conteúdo para um público que imagina ter. O diagnóstico corrige essa distância.',
   },
   {
     number: '05',
     icon: '📊',
     title: 'Análise de Mercado e Tendências',
-    desc: 'Onde o negócio está posicionado e onde deveria estar. Avaliamos o cenário competitivo, padrão de comunicação do setor, tendências relevantes e onde existem lacunas que o negócio ainda não ocupa.',
-    insight: 'Válido tanto para quem quer entrar no mercado com inteligência quanto para quem quer se reposicionar dentro dele.',
+    desc: 'Onde o negócio está posicionado e onde deveria estar. Avaliamos o cenário competitivo, o padrão de comunicação do setor, tendências relevantes para o nicho e onde existem lacunas que o negócio ainda não está ocupando.',
+    insight: 'Isso vale tanto para quem quer entrar no mercado com inteligência quanto para quem quer se reposicionar dentro dele.',
   },
 ]
 
@@ -120,7 +120,7 @@ export default function DiagnosticoEstrategico() {
             Diagnóstico Estratégico<br />+ Plano de Ação
           </h1>
           <p className="fade-up delay-2" style={{ marginTop: 16, maxWidth: 560, fontSize: 17, lineHeight: 1.75, color: '#5a5875' }}>
-            O Raio-X do seu negócio. Entendemos onde você está, o que impede o crescimento e traçamos o caminho para onde precisa chegar — com base em dados, pesquisas e ações aplicáveis.
+            O Raio-X do seu negócio. Um processo em duas etapas: entendemos onde está, o que impede de alcançar os objetivos e analisamos o mercado e o nicho. Depois, traçamos o caminho para onde precisa chegar — com base em dados, pesquisas e ações aplicáveis.
           </p>
 
           <div className="fade-up delay-3" style={{ marginTop: 36, display: 'flex', gap: 16, flexWrap: 'wrap' }}>
@@ -140,10 +140,10 @@ export default function DiagnosticoEstrategico() {
           <div style={{ maxWidth: 760, margin: '0 auto', textAlign: 'center' }}>
             <div className="tag tag-blue fade-up" style={{ marginBottom: 20 }}>O problema</div>
             <h2 className="fade-up delay-1" style={{ fontSize: 'clamp(22px, 3vw, 34px)', marginBottom: 24 }}>
-              A maioria das empresas investe em marketing antes de entender o que impede o crescimento.
+              A maioria das empresas investe em marketing antes de entender o que, de fato, está impedindo o crescimento.
             </h2>
             <p className="fade-up delay-2" style={{ fontSize: 16, color: '#5a5875', lineHeight: 1.8, marginBottom: 16 }}>
-              Contratam gestão de redes sociais, criam um site, apostam em tráfego pago — e continuam no mesmo lugar. Sem diagnóstico antes da execução, você pode estar gastando energia sem saber onde quer chegar.
+              Contratam gestão de redes sociais, criam um site, apostam em tráfego pago — e continuam no mesmo lugar. O problema é que com a ausência de diagnóstico antes da execução você pode estar gastando energia mas sem saber onde quer chegar.
             </p>
             <p className="fade-up delay-3" style={{ fontSize: 16, color: '#5a5875', lineHeight: 1.8 }}>
               Prescrição sem diagnóstico é negligência. Esse serviço existe para garantir que cada decisão tomada a partir daqui seja baseada em dados reais do negócio — não em suposição, tendência ou achismo.
@@ -159,10 +159,10 @@ export default function DiagnosticoEstrategico() {
             <div className="fade-up">
               <div className="tag tag-purple" style={{ marginBottom: 20 }}>Para quem é</div>
               <h2 style={{ fontSize: 'clamp(22px, 3vw, 34px)', marginBottom: 20 }}>
-                Para a empresária que quer tomar decisões com base em estratégia
+                Para a empresária que quer tomar decisões com base em dados e estratégia
               </h2>
               <p style={{ fontSize: 15, color: '#5a5875', lineHeight: 1.8 }}>
-                Não em intuição ou tendência do momento. O ponto em comum entre quem faz o diagnóstico: ela sabe que crescimento sem direção é desperdício de tempo e dinheiro.
+                Não em intuição ou tendência do momento. Seja porque está lançando um negócio e quer construir sobre uma base sólida desde o início. Seja porque tem uma operação funcionando, mas algo entre a vitrine e a venda não fecha. O ponto em comum: ela sabe que crescimento sem direção é desperdício de tempo e dinheiro.
               </p>
             </div>
 
@@ -170,14 +170,14 @@ export default function DiagnosticoEstrategico() {
               <div className="card fade-up delay-1" style={{ padding: '24px', display: 'flex', gap: 16, alignItems: 'flex-start' }}>
                 <div className="icon-box icon-box-blue" style={{ width: 48, height: 48, borderRadius: 14, fontSize: 20, flexShrink: 0 }}>🌱</div>
                 <div>
-                  <h3 style={{ fontSize: 15, marginBottom: 6 }}>Negócios que estão começando</h3>
+                  <h3 style={{ fontSize: 15, marginBottom: 6 }}>Negócios novos que querem começar com estrutura</h3>
                   <p style={{ fontSize: 13, color: '#8a88a0', lineHeight: 1.65, margin: 0 }}>Quer lançar com estrutura e direção desde o início, construindo sobre uma base sólida.</p>
                 </div>
               </div>
               <div className="card fade-up delay-2" style={{ padding: '24px', display: 'flex', gap: 16, alignItems: 'flex-start' }}>
                 <div className="icon-box icon-box-amber" style={{ width: 48, height: 48, borderRadius: 14, fontSize: 20, flexShrink: 0 }}>📈</div>
                 <div>
-                  <h3 style={{ fontSize: 15, marginBottom: 6 }}>Empresas que já faturam mas trancaram</h3>
+                  <h3 style={{ fontSize: 15, marginBottom: 6 }}>Empresas que já faturam mas sentiram o crescimento travar</h3>
                   <p style={{ fontSize: 13, color: '#8a88a0', lineHeight: 1.65, margin: 0 }}>Tem uma operação funcionando, mas algo entre a vitrine e a venda não fecha.</p>
                 </div>
               </div>
@@ -252,13 +252,13 @@ export default function DiagnosticoEstrategico() {
               }}>2</div>
               <div>
                 <h3 style={{ fontSize: 20, marginBottom: 4 }}>Plano de Ação — o que fazer a partir daqui</h3>
-                <p style={{ fontSize: 14, color: '#8a88a0', margin: 0 }}>O diagnóstico sozinho não move o negócio. O que move é saber, com precisão, o que ajustar e em qual ordem.</p>
+                <p style={{ fontSize: 14, color: '#8a88a0', margin: 0 }}>O diagnóstico sozinho não move o negócio. O que move é saber, com precisão, o que ajustar, o que construir e em qual ordem.</p>
               </div>
             </div>
 
             <div className="card fade-up delay-1" style={{ padding: '32px 28px' }}>
               <p style={{ fontSize: 15, color: '#5a5875', lineHeight: 1.8, marginBottom: 24 }}>
-                Após a análise dos cinco pilares, você recebe um plano de ação estratégico com metas definidas e as frentes que precisam ser ativadas para atingi-las:
+                Após a análise dos cinco pilares, você recebe um plano de ação estratégico com metas definidas e as frentes que precisam ser ativadas para atingi-las. Pode incluir:
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: 12, marginBottom: 24 }}>
                 {[
@@ -281,7 +281,7 @@ export default function DiagnosticoEstrategico() {
                 borderRadius: 14,
                 fontSize: 14, color: '#3367ca', lineHeight: 1.7, fontStyle: 'italic',
               }}>
-                Não é um documento genérico de recomendações. É um mapa com prioridades claras — o que precisa ser feito primeiro, o que pode esperar e o que está funcionando e deve ser mantido. A cliente sai da sessão sabendo exatamente o que fazer nos próximos 30, 60 e 90 dias.
+                Não é um documento genérico de recomendações. É um mapa com prioridades claras — o que precisa ser feito primeiro, o que pode esperar e o que está funcionando e deve ser mantido. Você sai da sessão de entrega sabendo exatamente o que fazer nos próximos 30, 60 e 90 dias.
               </div>
             </div>
           </div>
@@ -353,12 +353,12 @@ export default function DiagnosticoEstrategico() {
             <div style={{ position: 'absolute', top: -50, right: -50, width: 280, height: 280, borderRadius: '50%', background: 'radial-gradient(circle, rgba(148,176,237,0.2) 0%, transparent 70%)', filter: 'blur(40px)', pointerEvents: 'none' }} />
             <div style={{ position: 'absolute', bottom: -30, left: -40, width: 220, height: 220, borderRadius: '50%', background: 'radial-gradient(circle, rgba(107,78,230,0.15) 0%, transparent 70%)', filter: 'blur(40px)', pointerEvents: 'none' }} />
 
-            <div className="tag tag-white fade-up" style={{ marginBottom: 20 }}>✦ É o primeiro passo</div>
+            <div className="tag tag-white fade-up" style={{ marginBottom: 20 }}>✦ Por que começa aqui</div>
             <h2 style={{ fontSize: 'clamp(22px, 3.5vw, 38px)', color: 'white', marginBottom: 16, maxWidth: 540, margin: '0 auto 16px' }} className="fade-up delay-1">
               Contrate qualquer serviço sem diagnóstico e você está reformando sem laudo técnico.
             </h2>
             <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)', maxWidth: 460, margin: '0 auto 40px', lineHeight: 1.8 }} className="fade-up delay-2">
-              O acabamento fica bonito. A base, não. O Diagnóstico Estratégico existe para garantir que cada decisão tomada a partir daqui seja baseada em dados reais — não em suposição.
+              O acabamento fica bonito. A base, não. Prescrição sem diagnóstico é negligência. Esse serviço existe para garantir que cada decisão tomada a partir daqui seja baseada em dados reais do negócio — não em suposição, tendência ou achismo.
             </p>
 
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }} className="fade-up delay-3">

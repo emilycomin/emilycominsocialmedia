@@ -132,7 +132,7 @@ export default function Footer() {
               WhatsApp
             </a>
             <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', lineHeight: 1.6 }}>
-              Respondendo mensagens<br />de seg a sex, das 9h às 18h
+              Atendimento de seg a sex, das 9h às 17h
             </p>
           </div>
         </div>

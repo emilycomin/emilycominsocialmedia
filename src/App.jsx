@@ -34,6 +34,7 @@ export default function App() {
           <Route path="/infoprodutos" element={<Infoprodutos />} />
           <Route path="/faq"          element={<FAQ />} />
           <Route path="/diagnostico" element={<DiagnosticoEstrategico />} />
+          
         </Routes>
       </main>
       <Footer />

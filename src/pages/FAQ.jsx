@@ -7,28 +7,23 @@ const WA_LINK = 'https://wa.me/5551991336280'
 const faqs = [
   {
     q: 'Como você funciona diferente de um simples consultor de conteúdo?',
-    a: 'A maioria analisa e sugere. Eu vou além: entendo POR QUÊ não está funcionando e saio com um PLANO PRONTO para implementar. Você não fica com análise vaga — sai com 16 ideias específicas, landing page otimizada e cronograma.',
+    a: 'A diferença já está na pergunta. Nada aqui é simples. Eu vou além: entendo POR QUÊ não está funcionando e saio com um PLANO PRONTO para implementar. Você não fica com análise vaga e sem saber como aplicar, sai cronograma e direcionamento pensados para os seus objetivos.',
     icon: '💡',
   },
   {
     q: 'Preciso fazer o Diagnóstico antes de contratar outros serviços?',
-    a: 'Sim, recomendo sempre. Sem diagnóstico, é como tentar vender sem saber quem é seu cliente. O diagnóstico organiza tudo e evita erros caros. Depois você escolhe: executa sozinha ou contrata.',
+    a: 'Sim, não existe advinhação aqui. Além de eu sempre trabalhar com dados, eu preciso conhecer o seu negócio, o mercado e a sua essência para poder transformar isso em conteúdo.',
     icon: '🔍',
   },
   {
     q: 'Quanto tempo leva para ver resultados?',
-    a: 'Depois do diagnóstico (7 dias), você já tem tudo pronto. Publicando as 16 ideias estratégicas com consistência, você começa a ver movimento em 30 dias. Conversões reais em 60–90 dias (depende do nicho).',
+    a: 'Sendo bem honesta, depende. Se você implementar as 16 ideias do diagnóstico, pode começar a ver resultados em 4-6 semanas. Mas o marketing é um jogo de paciência e consistência. O importante é que cada passo te leve para mais perto dos seus objetivos.',
     icon: '⏱️',
   },
   {
     q: 'Você trabalha com todos os nichos ou tem restrições?',
-    a: 'Trabalho principalmente com profissionais de saúde (psicólogos, nutricionistas, fisioterapeutas, enfermeiros) e empreendedoras digitais. Respeito sempre as regulamentações profissionais de cada nicho (COFEN, CFN, etc).',
+    a: 'Não tenho restrições, já trabalhei com diversos nichos (Astrologia, espiritualidade, advocacia, hotéis, petshop). Porém como sou enfermeira tenho afinidade com nichos da saúde como  psicólogos, nutricionistas, fisioterapeutas, enfermeiros, médicos e etc), mas isso não é uma regra. O que importa é a vontade de crescer e aprender juntos.',
     icon: '🎯',
-  },
-  {
-    q: 'E se eu contratar e não gostar? Tem garantia?',
-    a: 'Teste 14 dias. Se não sentir que vale a pena, devolvemos 100%. Meu trabalho prova sozinho — não preciso de armadilhas.',
-    icon: '🛡️',
   },
 ]
 
@@ -153,7 +148,7 @@ export default function FAQ() {
             margin: '0 auto',
             lineHeight: 1.7,
           }}>
-            Antes de tomar uma decisão, é normal ter dúvidas. Aqui estão as mais comuns — sem enrolação.
+            Antes de tomar uma decisão, é normal ter dúvidas. Aqui estão as mais comuns:
           </p>
         </div>
       </section>
@@ -197,7 +192,7 @@ export default function FAQ() {
                 Sua dúvida não está aqui?
               </h2>
               <p style={{ color: 'rgba(255,255,255,0.78)', fontSize: 16, maxWidth: 400, margin: '0 auto 28px', lineHeight: 1.7 }}>
-                Me manda uma mensagem no WhatsApp — respondo pessoalmente, sem robôs.
+                Me manda uma mensagem no WhatsApp eu mesma irei te responder.
               </p>
               <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
                 <a
