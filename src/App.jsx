@@ -9,6 +9,7 @@ import Contato from './pages/Contato'
 import Infoprodutos from './pages/Infoprodutos'
 import FAQ from './pages/FAQ'
 import DiagnosticoEstrategico from './pages/DiagnosticoEstrategico'
+import MiniCurso from './pages/MiniCurso'
 import { Analytics } from "@vercel/analytics/react"
 
 function ScrollToTop() {
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="/infoprodutos" element={<Infoprodutos />} />
           <Route path="/faq"          element={<FAQ />} />
           <Route path="/diagnostico" element={<DiagnosticoEstrategico />} />
+          <Route path="/mini-curso"  element={<MiniCurso />} />
           
         </Routes>
       </main>
