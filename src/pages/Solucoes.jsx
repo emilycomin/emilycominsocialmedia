@@ -28,7 +28,7 @@ const categories = [
         icon: '✨',
         colorClass: 'icon-box-purple',
         title: 'Clube de IA para Empreendedoras',
-        badge: 'Novidade',
+        badge: 'Em breve!',
         price: 67.00,
         desc: 'Comunidade mensal para empreendedoras que querem usar IA de forma prática no negócio. Todo mês: novas ferramentas, automações prontas para usar e resolução de desafios reais em grupo.',
         features: ['Novas IAs e automações todo mês', 'Comunidade ativa de empreendedoras', 'Suporte para desafios do seu negócio'],
