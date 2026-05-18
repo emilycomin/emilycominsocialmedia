@@ -214,6 +214,9 @@ export default function ConsultoriaConteudo() {
 
       {/* ── CTA FINAL ── */}
       <section style={{ padding: '60px 0 120px' }}>
+         <h2 style={{ fontSize: 'clamp(22px, 3.5vw, 38px)', color: 'white', maxWidth: 560, margin: '0 auto 16px' }} className="fade-up">
+              Pare de criar conteúdo no escuro e comece a construir uma presença que vende.
+            </h2>
         <div className="container">
           <div style={{
             background: 'linear-gradient(135deg, #3e3a53 0%, #4a4670 100%)',
@@ -226,9 +229,7 @@ export default function ConsultoriaConteudo() {
             <div style={{ position: 'absolute', top: -50, right: -50, width: 280, height: 280, borderRadius: '50%', background: 'radial-gradient(circle, rgba(148,176,237,0.2) 0%, transparent 70%)', filter: 'blur(40px)', pointerEvents: 'none' }} />
             <div style={{ position: 'absolute', bottom: -30, left: -40, width: 220, height: 220, borderRadius: '50%', background: 'radial-gradient(circle, rgba(107,78,230,0.15) 0%, transparent 70%)', filter: 'blur(40px)', pointerEvents: 'none' }} />
 
-            <h2 style={{ fontSize: 'clamp(22px, 3.5vw, 38px)', color: 'white', maxWidth: 560, margin: '0 auto 16px' }} className="fade-up">
-              Pare de criar conteúdo no escuro e comece a construir uma presença que vende.
-            </h2>
+           
             <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)', maxWidth: 480, margin: '0 auto 40px', lineHeight: 1.8 }} className="fade-up delay-1">
               A consultoria existe para garantir que cada decisão tomada a partir daqui seja baseada em dados reais do negócio — sem suposições, tendências ou achismo. Você sai com sistema, estratégia e as ferramentas para criar conteúdo que parece seu.
             </p>
