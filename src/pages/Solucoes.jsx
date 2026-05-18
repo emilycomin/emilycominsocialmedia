@@ -97,9 +97,6 @@ export default function Solucoes() {
           <h1 className="fade-up delay-1">
             A infraestrutura digital<br />que transforma seguidores<br />em ativos de venda.
           </h1>
-          <p className="fade-up delay-2" style={{ marginTop: 16, maxWidth: 520 }}>
-            Soluções modulares de estratégia, conteúdo e tecnologia para empresas que buscam escala e profissionalismo.
-          </p>
         </div>
       </section>
 
@@ -111,34 +108,7 @@ export default function Solucoes() {
           style={{ background: sectionBg[catIdx], paddingTop: catIdx === 0 ? 40 : undefined }}
         >
           <div className="container">
-            <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: 24, marginBottom: 48 }}>
-              <div>
-                <div className={`tag ${cat.tagClass} fade-up`} style={{ marginBottom: 14 }}>{cat.tag}</div>
-                <h2 style={{ fontSize: 'clamp(24px, 3vw, 36px)', marginBottom: 8 }} className="fade-up delay-1">
-                  {cat.title}
-                </h2>
-                {cat.subtitle && (
-                  <p style={{ fontSize: 15, color: '#8a88a0', maxWidth: 420 }} className="fade-up delay-2">
-                    {cat.subtitle}
-                  </p>
-                )}
-              </div>
-              <div className="fade-up delay-2" style={{
-                background: 'rgba(51,103,202,0.06)',
-                border: '1px solid rgba(51,103,202,0.12)',
-                borderRadius: 16,
-                padding: '14px 20px',
-                fontSize: 13,
-                color: '#3367ca',
-                fontStyle: 'italic',
-                maxWidth: 280,
-                lineHeight: 1.6,
-                alignSelf: 'center',
-              }}>
-                "{cat.hook}"
-              </div>
-            </div>
-
+  
             <div className="sol-grid">
               {cat.services.map((s, i) => (
                 <div
