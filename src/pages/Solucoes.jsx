@@ -18,24 +18,6 @@ const WhatsAppIcon = ({ size = 18 }) => (
 
 const categories = [
   {
-    id: 'novidade',
-    tag: '🚀 Novidade',
-    tagClass: 'tag-purple',
-    hook: 'Um clube de assinaturas de conteúdo estratégico para quem quer crescer no digital com consistência e inteligência de dados.',
-    title: 'Clube de Conteúdo Estratégico',
-    services: [
-      {
-        icon: '✨',
-        colorClass: 'icon-box-purple',
-        title: 'Clube de IA para Empreendedoras',
-        badge: 'Em breve!',
-        price: 67.00,
-        desc: 'Comunidade mensal para empreendedoras que querem usar IA de forma prática no negócio. Todo mês: novas ferramentas, automações prontas para usar e resolução de desafios reais em grupo.',
-        features: ['Novas IAs e automações todo mês', 'Comunidade ativa de empreendedoras', 'Suporte para desafios do seu negócio'],
-      }
-    ]
-  },
-  {
     id: 'conteúdo',
     tag: '🧠 Conteúdo',
     tagClass: 'tag-blue',
@@ -79,11 +61,20 @@ const categories = [
         desc: 'Desenvolvimento de ferramentas digitais exclusivas para resolver problemas operacionais da sua empresa. Criamos desde portais de clientes e dashboards de métricas até plataformas de agendamento ou sistemas internos de gestão.',
         features: ['Solução de problemas operacionais', 'Ferramentas digitais exclusivas', 'Automação de processos internos'],
       },
+      {
+        icon: '✨',
+        colorClass: 'icon-box-purple',
+        title: 'Clube de IA para Empreendedoras',
+        badge: 'Em breve!',
+        price: 67.00,
+        desc: 'Comunidade mensal para empreendedoras que querem usar IA de forma prática no negócio. Todo mês: novas ferramentas, automações prontas para usar e resolução de desafios reais em grupo.',
+        features: ['Novas IAs e automações todo mês', 'Comunidade ativa de empreendedoras', 'Suporte para desafios do seu negócio'],
+      },
     ]
   },
 ]
 
-const sectionBg = ['transparent', 'rgba(248,249,252,0.8)']
+const sectionBg = ['transparent']
 
 function formatPrice(price) {
   if (typeof price === 'string') return price
