@@ -8,7 +8,7 @@ import SobreMim from './pages/SobreMim'
 import Contato from './pages/Contato'
 import Infoprodutos from './pages/Infoprodutos'
 import FAQ from './pages/FAQ'
-import DiagnosticoEstrategico from './pages/DiagnosticoEstrategico'
+import ConsultoriaConteudo from './pages/ConsultoriaConteudo'
 import MiniCurso from './pages/MiniCurso'
 import { Analytics } from "@vercel/analytics/react"
 
@@ -34,7 +34,7 @@ export default function App() {
           <Route path="/contato"      element={<Contato />} />
           <Route path="/infoprodutos" element={<Infoprodutos />} />
           <Route path="/faq"          element={<FAQ />} />
-          <Route path="/diagnostico" element={<DiagnosticoEstrategico />} />
+          <Route path="/consultoria" element={<ConsultoriaConteudo />} />
           <Route path="/mini-curso"  element={<MiniCurso />} />
           
         </Routes>
