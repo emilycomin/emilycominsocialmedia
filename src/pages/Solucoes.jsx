@@ -44,16 +44,6 @@ const categories = [
     subtitle: 'Para quem precisa de direção e inteligência de dados.',
     services: [
       {
-        icon: '⚡',
-        colorClass: 'icon-box-amber',
-        title: 'Sprint de Conteúdo',
-        badge: 'Entrega Rápida',
-        price: 795.00,
-        desc: 'Produção de roteiros, legendas e copies focadas em conversão. Entregamos o volume de conteúdo necessário para o seu mês com textos que vendem e conectam.',
-        features: ['Diagnóstico Estratégico', '16 conteúdos', 'Copies e roteiros de reels', 'Entrega em 10 dias úteis'],
-        learnMoreLinkExternal: 'https://sprintdeconteudo.lovable.app/',
-      },
-      {
         icon: '🎯',
         colorClass: 'icon-box-purple',
         title: 'Consultoria Sistema de Conteúdo',
@@ -66,49 +56,21 @@ const categories = [
       {
         icon: '📱',
         colorClass: 'icon-box-blue',
-        title: 'Gerenciamento de Redes Sociais',
+        title: 'Ecossistema de Comunicação',
         badge: 'Full Service',
         price: 1500.00,
         desc: 'A solução completa para quem quer delegar a presença digital. Engloba desde o planejamento estratégico, criação de calendário de conteúdos, postagem e análise mensal de resultados.',
         features: ['Planejamento estratégico mensal', 'Design e edição', 'Agendamento de posts', 'Análise mensal de resultados'],
       },
-    ]
-  },
-  {
-    id: 'automacao',
-    tag: '⚙️ Ecossistema com IA e Automação',
-    tagClass: 'tag-amber',
-    hook: 'Pronto para escalar sem depender do seu tempo? Tecnologia trabalhando por você.',
-    title: 'Automação',
-    subtitle: 'Tecnologia para ganhar tempo, produtividade e não perder nenhum lead.',
-    services: [
       {
-        icon: '🤖',
-        colorClass: 'icon-box-blue',
-        title: 'Automações de Engajamento e Direct',
-        badge: null,
-        price: 397.00,
-        desc: 'Configuração de robôs inteligentes que respondem comentários e enviam links automaticamente por Direct, transformando interesse imediato em leads qualificados.',
-        features: ['Resposta automática de comentários', 'Envio de links por Direct', 'Captação de leads 24/7', 'Integração com Instagram'],
-      },
-      {
-        icon: '🔗',
+        icon: '📊',
         colorClass: 'icon-box-amber',
-        title: 'Reestruturação de Link na Bio',
-        badge: null,
-        price: 197.00,
-        desc: 'Organizamos sua porta de entrada. Criamos um hub de links estratégico que facilita a jornada do cliente até o seu WhatsApp ou página de vendas.',
-        features: ['Hub de links estratégico', 'Jornada do cliente otimizada', 'Conexão direta com WhatsApp', 'Design alinhado à marca'],
+        title: 'Assessoria de Comunicação',
+        badge: 'Mensal',
+        price: 'A partir de R$ 667/mês',
+        desc: 'Alguém que olha para os seus números, ajusta a rota e mantém o conteúdo estratégico, para você crescer de forma consistente e não pela sorte.',
+        features: ['Análise de métricas com ação (não só relatório)', 'Calendário mensal: ganchos, formatos e CTAs definidos', 'Criação de páginas: 1 página de vendas por mês'],
       },
-      {
-       icon: '🤖',
-       colorClass: 'icon-box-blue',
-       title: 'Consultoria de Automação de Processos',
-       badge: 'Mais vendido',
-       price: 'R$600,00',
-       desc: 'Identificamos onde seu negócio perde tempo e entregamos um plano de automação customizado com as ferramentas certas para você. Do diagnóstico ao plano de ação, você sai sabendo exatamente o que automatizar e como.',
-       features: ['Diagnóstico completo de processos', 'Plano de automação documentado', 'Ferramentas recomendadas por prioridade'],
-     },
       {
         icon: '🔌',
         colorClass: 'icon-box-green',
@@ -122,7 +84,7 @@ const categories = [
   },
 ]
 
-const sectionBg = ['transparent', 'rgba(248,249,252,0.8)', 'transparent', 'rgba(248,249,252,0.8)']
+const sectionBg = ['transparent', 'rgba(248,249,252,0.8)']
 
 function formatPrice(price) {
   if (typeof price === 'string') return price
