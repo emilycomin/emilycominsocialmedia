@@ -47,7 +47,6 @@ const categories = [
         icon: '🎯',
         colorClass: 'icon-box-purple',
         title: 'Consultoria Sistema de Conteúdo',
-        badge: 'Fase 2 — Crescimento',
         price: 797.00,
         desc: 'Saia com um sistema completo de conteúdo estratégico e aprenda a criar seus próprios posts com IA sem ficar genérico. O empurrão estratégico para você assumir o controle da sua narrativa.',
         features: ['Análise de perfil e estratégia', 'Definição de formatos', 'Sistema de conteúdo montado', 'Entregáveis de IA inclusos'],
