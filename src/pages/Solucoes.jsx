@@ -18,12 +18,6 @@ const WhatsAppIcon = ({ size = 18 }) => (
 
 const categories = [
   {
-    id: 'conteúdo',
-    tag: '🧠 Conteúdo',
-    tagClass: 'tag-blue',
-    hook: 'Se você procura soluções para criação de conteúdo, gestão de redes ou posicionamento digital, está na seção certa.',
-    title: 'O Conteúdo',
-    subtitle: 'Para quem precisa de direção e inteligência de dados.',
     services: [
       {
         icon: '🎯',
@@ -62,7 +56,7 @@ const categories = [
         features: ['Solução de problemas operacionais', 'Ferramentas digitais exclusivas', 'Automação de processos internos'],
       },
       {
-        icon: '✨',
+        icon: '🤖',
         colorClass: 'icon-box-purple',
         title: 'Clube de IA para Empreendedoras',
         badge: 'Em breve!',
@@ -88,14 +82,14 @@ export default function Solucoes() {
     <div style={{ paddingTop: '96px' }}>
 
       {/* HEADER */}
-      <section className="page-header" style={{ paddingBottom: '80px' }}>
-        <div style={{ position: 'absolute', top: '-10%', right: '-5%', width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, rgba(148,176,237,0.4) 0%, transparent 65%)', filter: 'blur(70px)', pointerEvents: 'none' }} />
+      <section className="page-header" style={{ padding: '60px' }}>
+        <div style={{ position: 'absolute', top: '-30%', right: '-5%', width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, rgba(148,176,237,0.4) 0%, transparent 65%)', filter: 'blur(70px)', pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', bottom: '0', left: '-5%', width: 350, height: 350, borderRadius: '50%', background: 'radial-gradient(circle, rgba(232,161,78,0.22) 0%, transparent 65%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div className="tag tag-blue fade-up" style={{ marginBottom: 20 }}>✦ Soluções</div>
           <h1 className="fade-up delay-1">
-            A infraestrutura digital<br />que transforma seguidores<br />em ativos de venda.
+            Ecossistema completo da <br /> comunicação digital da sua marca: <br/>do conteúdo até o seu site.
           </h1>
         </div>
       </section>
