@@ -117,10 +117,10 @@ export default function DiagnosticoEstrategico() {
           </div>
 
           <h1 className="fade-up delay-1" style={{ maxWidth: 700, textAlign: 'center', margin: '0 auto' }}>
-            Diagnóstico Estratégico<br />+ Plano de Ação
+            Consultoria Sistema de Conteúdo<br />
           </h1>
           <p className="fade-up delay-2" style={{ marginTop: 16, maxWidth: 560, fontSize: 17, lineHeight: 1.75, color: '#5a5875' }}>
-            O Raio-X do seu negócio. Um processo em duas etapas: entendemos onde está, o que impede de alcançar os objetivos e analisamos o mercado e o nicho. Depois, traçamos o caminho para onde precisa chegar — com base em dados, pesquisas e ações aplicáveis.
+                     Saia com um sistema completo de conteúdo estratégico — e aprenda a criar seus próprios posts com IA sem ficar genérico.
           </p>
 
           <div className="fade-up delay-3" style={{ marginTop: 36, display: 'flex', gap: 16, flexWrap: 'wrap' }}>
@@ -140,13 +140,13 @@ export default function DiagnosticoEstrategico() {
           <div style={{ maxWidth: 760, margin: '0 auto', textAlign: 'center' }}>
             <div className="tag tag-blue fade-up" style={{ marginBottom: 20 }}>O problema</div>
             <h2 className="fade-up delay-1" style={{ fontSize: 'clamp(22px, 3vw, 34px)', marginBottom: 24 }}>
-              A maioria das empresas investe em marketing antes de entender o que, de fato, está impedindo o crescimento.
+              A maioria das empresas investe em marketing antes de entender os oquês, de fato, está impedindo o crescimento.
             </h2>
             <p className="fade-up delay-2" style={{ fontSize: 16, color: '#5a5875', lineHeight: 1.8, marginBottom: 16 }}>
               Contratam gestão de redes sociais, criam um site, apostam em tráfego pago — e continuam no mesmo lugar. O problema é que com a ausência de diagnóstico antes da execução você pode estar gastando energia mas sem saber onde quer chegar.
             </p>
             <p className="fade-up delay-3" style={{ fontSize: 16, color: '#5a5875', lineHeight: 1.8 }}>
-              Prescrição sem diagnóstico é negligência. Esse serviço existe para garantir que cada decisão tomada a partir daqui seja baseada em dados reais do negócio — não em suposição, tendência ou achismo.
+              A consultoria existe para garantir que cada decisão tomada a partir daqui seja baseada em dados reais do negócio — não em suposição, tendências ou achismo.
             </p>
           </div>
         </div>

@@ -260,14 +260,14 @@ export default function MiniCurso() {
               <p style={{ fontSize:15, color:'#8a88a0', margin:0 }}>Prints reais, sem edição.</p>
             </div>
 
-            {/* Screenshots */}
-            <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(260px,1fr))', gap:12, marginBottom:32 }}>
+            {/* Screenshots — masonry via CSS columns */}
+            <div className="mc-feedback-grid" style={{ columnCount:3, columnGap:'14px', marginBottom:32 }}>
               {feedbackScreenshots.map((s, i) => (
-                <div key={i} style={{ borderRadius:16, overflow:'hidden', boxShadow:'0 4px 20px rgba(62,58,83,.1)', border:'1px solid rgba(62,58,83,.07)', background:'#f5f5f5' }}>
+                <div key={i} style={{ breakInside:'avoid', marginBottom:14, borderRadius:16, overflow:'hidden', boxShadow:'0 4px 20px rgba(62,58,83,.10)', border:'1px solid rgba(62,58,83,.07)', background:'#f0f0f0' }}>
                   <img src={s.src} alt={s.alt} style={{ width:'100%', height:'auto', display:'block' }}/>
                 </div>
               ))}
-              <div style={{ background:'linear-gradient(135deg,#1a1440,#2d2060)', borderRadius:16, padding:'24px 20px', display:'flex', flexDirection:'column', justifyContent:'center', minHeight:120 }}>
+              <div style={{ breakInside:'avoid', marginBottom:14, background:'linear-gradient(135deg,#1a1440,#2d2060)', borderRadius:16, padding:'28px 22px', display:'flex', flexDirection:'column', justifyContent:'center' }}>
                 <div style={{ color:'#e3fc87', fontSize:22, marginBottom:10, lineHeight:1 }}>✦</div>
                 <p style={{ fontSize:14, color:'rgba(255,255,255,.8)', lineHeight:1.7, marginBottom:12, fontStyle:'italic' }}>
                   Todas as páginas que uso no meu próprio negócio foram criadas com esse mesmo método. É o que eu faço no dia a dia.
@@ -356,11 +356,13 @@ export default function MiniCurso() {
           .mc-hero-img     { display: none !important; }
           .mc-sobre-inner  { grid-template-columns: 1fr !important; }
           .mc-sobre-inner > div:first-child { min-height: 220px !important; position: relative !important; }
+          .mc-feedback-grid { column-count: 2 !important; }
         }
         @media (max-width: 768px) {
           .mc-incluso { grid-template-columns: 1fr 1fr !important; }
         }
-        @media (max-width: 480px) {
+        @media (max-width: 540px) {
+          .mc-feedback-grid { column-count: 1 !important; }
           .mc-incluso { grid-template-columns: 1fr !important; }
         }
       `}</style>

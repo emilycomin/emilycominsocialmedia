@@ -93,10 +93,6 @@ export default function ConsultoriaConteudo() {
             <span style={{ fontSize: 13, color: '#3367ca', fontWeight: 600 }}>Consultoria Sistema de Conteúdo</span>
           </div>
 
-          <div className="fade-up delay-1" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(51,103,202,0.08)', border: '1px solid rgba(51,103,202,0.15)', borderRadius: 20, padding: '6px 14px', marginBottom: 20 }}>
-            <span style={{ fontSize: 11, fontWeight: 700, color: '#3367ca', letterSpacing: '0.06em', textTransform: 'uppercase' }}>Fase 2 — Crescimento</span>
-          </div>
-
           <h1 className="fade-up delay-2" style={{ maxWidth: 680, textAlign: 'center', margin: '0 auto' }}>
             Consultoria<br />Sistema de Conteúdo
           </h1>
@@ -104,12 +100,7 @@ export default function ConsultoriaConteudo() {
             O empurrão estratégico que faltava para você assumir o controle da sua narrativa. Você sai com sistema, estratégia e as ferramentas necessárias para criar conteúdo autêntico.
           </p>
 
-          <div className="fade-up delay-3" style={{ marginTop: 12, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-            <span style={{ fontSize: 22, fontWeight: 800, color: '#3e3a53' }}>R$ 797</span>
-            <span style={{ fontSize: 13, color: '#8a88a0' }}>· consultoria pontual com entregáveis</span>
-          </div>
-
-          <div className="fade-up delay-3" style={{ marginTop: 32, display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+          <div className="fade-up delay-3" style={{ marginTop: 32, display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href={waLink} target="_blank" rel="noopener noreferrer" className="btn" style={{ background: '#3367ca', color: 'white', display: 'flex', alignItems: 'center', gap: 8 }}>
               Quero a consultoria <ArrowRight />
             </a>
@@ -170,7 +161,7 @@ export default function ConsultoriaConteudo() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 20 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))', gap: 20 }}>
             {pillars.map((p, i) => (
               <div key={p.number} className={`card fade-up delay-${i + 1}`} style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: 12 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
@@ -214,9 +205,7 @@ export default function ConsultoriaConteudo() {
 
       {/* ── CTA FINAL ── */}
       <section style={{ padding: '60px 0 120px' }}>
-         <h2 style={{ fontSize: 'clamp(22px, 3.5vw, 38px)', color: 'white', maxWidth: 560, margin: '0 auto 16px' }} className="fade-up">
-              Pare de criar conteúdo no escuro e comece a construir uma presença que vende.
-            </h2>
+
         <div className="container">
           <div style={{
             background: 'linear-gradient(135deg, #3e3a53 0%, #4a4670 100%)',
@@ -228,11 +217,11 @@ export default function ConsultoriaConteudo() {
           }}>
             <div style={{ position: 'absolute', top: -50, right: -50, width: 280, height: 280, borderRadius: '50%', background: 'radial-gradient(circle, rgba(148,176,237,0.2) 0%, transparent 70%)', filter: 'blur(40px)', pointerEvents: 'none' }} />
             <div style={{ position: 'absolute', bottom: -30, left: -40, width: 220, height: 220, borderRadius: '50%', background: 'radial-gradient(circle, rgba(107,78,230,0.15) 0%, transparent 70%)', filter: 'blur(40px)', pointerEvents: 'none' }} />
+            <h2 style={{ fontSize: 'clamp(22px, 3.5vw, 38px)', color: 'white', maxWidth: 560, textAlign: 'center', margin: '0 auto 16px' }} className="fade-up">
+              Pare de criar conteúdo no escuro e comece a construir uma presença que vende.
+            </h2>
 
-           
-            <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)', maxWidth: 480, margin: '0 auto 40px', lineHeight: 1.8 }} className="fade-up delay-1">
-              A consultoria existe para garantir que cada decisão tomada a partir daqui seja baseada em dados reais do negócio — sem suposições, tendências ou achismo. Você sai com sistema, estratégia e as ferramentas para criar conteúdo que parece seu.
-            </p>
+            <span style={{ fontSize: 48, fontWeight: 800, color: 'white' }}>R$ 797</span>
 
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }} className="fade-up delay-2">
               <a
@@ -243,17 +232,14 @@ export default function ConsultoriaConteudo() {
                 style={{ background: '#25D366', color: 'white', boxShadow: '0 4px 20px rgba(37,211,102,0.3)', display: 'flex', alignItems: 'center', gap: 8 }}
               >
                 <WhatsAppIcon />
-                Falar no WhatsApp
+                Eu quero minha consultoria!
               </a>
-              <Link to="/contato" className="btn btn-ghost">
-                Solicitar proposta <ArrowRight color="#3e3a53" />
-              </Link>
             </div>
 
-            <div style={{ marginTop: 28, display: 'flex', flexDirection: 'column', gap: 6, alignItems: 'center' }} className="fade-up delay-2">
-              <span style={{ fontSize: 24, fontWeight: 800, color: 'white' }}>R$ 797</span>
-              <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)' }}>Pagamento no cartão de crédito em até 2x ou via PIX com 10% de desconto.</span>
-              <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)' }}>2 encontros ao vivo de até 1h30.</span>
+            <div style={{ marginTop: 28, display: 'flex', flexDirection: 'row', gap: 6, justifyContent: 'center' }} className="fade-up delay-2">
+              <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)' }}>⁕ Pagamento no cartão de crédito em até 2x</span>
+              <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)' }}>⁕ PIX com 10% de desconto</span>
+              <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)' }}>⁕ 2 encontros ao vivo de até 1h30</span>
             </div>
           </div>
         </div>
