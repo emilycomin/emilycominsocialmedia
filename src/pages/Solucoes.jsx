@@ -20,6 +20,16 @@ const categories = [
   {
     services: [
       {
+        icon: '📊',
+        colorClass: 'icon-box-amber',
+        title: 'Assessoria de Comunicação',
+        badge: 'Mensal',
+        price: 'A partir de R$ 667/mês',
+        desc: 'Alguém que olha para os seus números, ajusta a rota e mantém o conteúdo estratégico, para você crescer de forma consistente e não pela sorte.',
+        features: ['Análise de métricas com ação (não só relatório)', 'Calendário mensal: ganchos, formatos e CTAs definidos', 'Criação de páginas: 1 página de vendas por mês'],
+        learnMoreLink: '/assessoria',
+      },
+      {
         icon: '🎯',
         colorClass: 'icon-box-purple',
         title: 'Consultoria Sistema de Conteúdo',
@@ -36,15 +46,6 @@ const categories = [
         price: 1500.00,
         desc: 'A solução completa para quem quer delegar a presença digital. Engloba desde o planejamento estratégico, criação de calendário de conteúdos, postagem e análise mensal de resultados.',
         features: ['Planejamento estratégico mensal', 'Design e edição', 'Agendamento de posts', 'Análise mensal de resultados'],
-      },
-      {
-        icon: '📊',
-        colorClass: 'icon-box-amber',
-        title: 'Assessoria de Comunicação',
-        badge: 'Mensal',
-        price: 'A partir de R$ 667/mês',
-        desc: 'Alguém que olha para os seus números, ajusta a rota e mantém o conteúdo estratégico, para você crescer de forma consistente e não pela sorte.',
-        features: ['Análise de métricas com ação (não só relatório)', 'Calendário mensal: ganchos, formatos e CTAs definidos', 'Criação de páginas: 1 página de vendas por mês'],
       },
       {
         icon: '🔌',
@@ -89,7 +90,7 @@ export default function Solucoes() {
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div className="tag tag-blue fade-up" style={{ marginBottom: 20 }}>✦ Soluções</div>
           <h1 className="fade-up delay-1">
-            Ecossistema completo da <br /> comunicação digital da sua marca: <br/>do conteúdo até o seu site.
+            Ecossistema completo da <br /> comunicação digital da sua marca: <br/>para cada fase do seu negócio.
           </h1>
         </div>
       </section>
