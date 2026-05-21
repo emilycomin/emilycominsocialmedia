@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const WA_LINK = 'https://wa.me/5551991336280'
+const WA_LINK = 'https://wa.me/+5551991336280'
 
 const InstagramIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -132,7 +132,7 @@ export default function Footer() {
               WhatsApp
             </a>
             <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', lineHeight: 1.6 }}>
-              Atendimento de seg a sex, das 9h às 17h
+              Atendimento de seg a sex, das 10h às 17h
             </p>
           </div>
         </div>
@@ -147,7 +147,7 @@ export default function Footer() {
           gap: 16,
         }}>
           <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)' }}>
-            © {year} Emily Comin · Social Media - CNPJ: 12.345.678/0001-90. Todos os direitos reservados.
+            © {year} Emily Comin · Studio Lemin - CNPJ:61.585.149/0001-74 . Todos os direitos reservados.
           </p>
           <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)' }}>
             Feito com ✦ para marcas que querem crescer

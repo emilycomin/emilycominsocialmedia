@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import useScrollReveal from '../hooks/useScrollReveal'
 
-const WA_LINK = 'https://wa.me/5551991336280'
+const WA_LINK = 'https://wa.me/+5551991336280'
 
 const products = [
   {
@@ -79,26 +79,28 @@ const products = [
     badge: 'Mais vendido',
     badgeBg: '#3367ca',
     title: 'Guia de Conteúdos',
-    subtitle: 'Do zero ao calendário completo',
+    subtitle: 'Acesso anual · Atualizado todo domingo',
     description:
-      'O guia completo para você planejar, organizar e criar conteúdos estratégicos para o Instagram — com consistência e sem travar na frente do celular.',
+      'Mais de 2 anos de criação de conteúdo reunidos num Trello organizado — ideias prontas, testadas e atualizadas toda semana para você nunca mais travar no "o que postar hoje".',
     price: 'R$ 97',
-    priceNote: 'clique para ver os detalhes',
+    priceNote: 'acesso anual',
     features: [
-      { icon: '🗓️', label: 'Calendário Editorial', desc: 'Planeje semanas inteiras de conteúdo de forma prática e visual' },
-      { icon: '✍️', label: 'Banco de Ideias', desc: 'Nunca mais fique sem o que postar — ideias para qualquer nicho' },
-      { icon: '📊', label: 'Estratégia de Formatos', desc: 'Saiba quando usar reels, carrosséis, stories e posts estáticos' },
-      { icon: '🎯', label: 'Checklist de Publicação', desc: 'Roteiro completo para publicar conteúdo que converte' },
+      { icon: '📌', label: '100+ ideias no Trello', desc: 'Banco de ideias organizadas por tipo e objetivo, prontas para adaptar ao seu nicho.' },
+      { icon: '🔄', label: 'Atualizado todo domingo', desc: 'Novos conteúdos virais, de posicionamento e conexão entram toda semana.' },
+      { icon: '🎓', label: 'Aula de onboarding no Trello', desc: 'Nunca usou o Trello? A aula ensina do zero: conta, quadro e navegação.' },
+      { icon: '🎯', label: 'Qualquer nicho', desc: 'Conteúdos testados com clientes de beleza, saúde, advocacia, arquitetura e muito mais.' },
     ],
     highlights: [
-      'Estrutura passo a passo, sem enrolação',
-      'Aplicável imediatamente no seu negócio',
-      'Feito para quem não tem tempo a perder',
-      'Linguagem simples, resultado profissional',
+      '2 anos de conteúdo estratégico num só lugar',
+      'Sempre tem ideia nova — atualização semanal',
+      'Sem precisar estudar estratégia do zero',
+      'Nasceu de uma dificuldade real — feito pra quem trava',
     ],
-    cta: 'Quero o Guia',
-    href: 'https://guiadeconteudos.lovable.app/',
+    cta: 'Ver página completa',
+    to: '/guia-conteudos',
+    isRouterLink: true,
     accentColor: '#e8a14e',
+    accentColorAlt: '#1e2d5a',
   },
 ]
 

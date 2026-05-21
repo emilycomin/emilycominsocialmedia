@@ -101,7 +101,7 @@ export default function ConsultoriaConteudo() {
           </p>
 
           <div className="fade-up delay-3" style={{ marginTop: 32, display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href={waLink} target="_blank" rel="noopener noreferrer" className="btn" style={{ background: '#3367ca', color: 'white', display: 'flex', alignItems: 'center', gap: 8 }}>
+            <a href='https://pay.hub.la/m1pd8KVSY0fFS1K57WSe' target="_blank" rel="noopener noreferrer" className="btn" style={{ background: '#3367ca', color: 'white', display: 'flex', alignItems: 'center', gap: 8 }}>
               Quero a consultoria <ArrowRight />
             </a>
             <a href="#o-que-inclui" className="btn btn-ghost">
@@ -225,15 +225,23 @@ export default function ConsultoriaConteudo() {
 
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }} className="fade-up delay-2">
               <a
-                href={waLink}
+                href='https://pay.hub.la/m1pd8KVSY0fFS1K57WSe'
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn"
                 style={{ background: '#25D366', color: 'white', boxShadow: '0 4px 20px rgba(37,211,102,0.3)', display: 'flex', alignItems: 'center', gap: 8 }}
               >
-                <WhatsAppIcon />
-                Eu quero minha consultoria!
+                Eu quero minha Consultoria!
               </a>
+              <a  
+                href='https://pay.hub.la/epfRdx4Dd8ZxL2jTH6S4'
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn"
+                style={{ background: '#25D366', color: 'white', boxShadow: '0 4px 20px rgba(37,211,102,0.3)', display: 'flex', alignItems: 'center', gap: 8 }}
+
+
+              >Quero a Consultoria com desconto!</a>
             </div>
 
             <div style={{ marginTop: 28, display: 'flex', flexDirection: 'row', gap: 6, justifyContent: 'center' }} className="fade-up delay-2">
