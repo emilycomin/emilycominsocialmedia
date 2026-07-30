@@ -15,6 +15,34 @@ const WhatsAppIcon = ({ size = 18 }) => (
   </svg>
 )
 
+const ClaudeMark = ({ size = 48, style }) => (
+  <svg width={size} height={size} viewBox="0 0 100 100" style={style} aria-hidden="true">
+    {Array.from({ length: 12 }).map((_, i) => (
+      <rect key={i} x="46" y="3" width="8" height="45" rx="4" fill="#CC785C" transform={`rotate(${i * 30} 50 50)`} />
+    ))}
+  </svg>
+)
+
+const OpenAIMark = ({ size = 48, style }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="#0d0d0d" style={style} aria-hidden="true">
+    <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.1419.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997z"/>
+  </svg>
+)
+
+const GeminiMark = ({ size = 48, style }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" style={style} aria-hidden="true">
+    <defs>
+      <linearGradient id="geminiGrad" x1="1" y1="3" x2="22" y2="21" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stopColor="#F94E44" />
+        <stop offset="0.33" stopColor="#F9AB00" />
+        <stop offset="0.63" stopColor="#1FA463" />
+        <stop offset="1" stopColor="#4285F4" />
+      </linearGradient>
+    </defs>
+    <path fill="url(#geminiGrad)" d="M12 24A14.304 14.304 0 0 0 0 12 14.304 14.304 0 0 0 12 0a14.305 14.305 0 0 0 12 12 14.305 14.305 0 0 0-12 12" />
+  </svg>
+)
+
 const painPoints = [
   {
     icon: '🔁',
@@ -33,44 +61,51 @@ const painPoints = [
   },
 ]
 
-const pillars = [
-  {
-    number: '01',
-    icon: '🔍',
-    title: 'Análise de Perfil',
-    desc: 'O que o seu perfil comunica agora versus o que deveria comunicar. Nós avaliamos a clareza da oferta, a coerência das mensagens e se o conteúdo que você publica está alinhado com o posicionamento que você quer ocupar.',
-  },
-  {
-    number: '02',
-    icon: '🎯',
-    title: 'Estratégia de Conteúdo',
-    desc: 'Com base no seu negócio, público e objetivo, desenhamos a lógica por trás dos conteúdos, uma estrutura que constrói autoridade e conversa com o seu público-alvo.',
-  },
-  {
-    number: '03',
-    icon: '📐',
-    title: 'Definição de Formatos',
-    desc: 'Quais formatos fazem sentido para o seu negócio, seu estágio de crescimento e o tempo real que você tem. Reels, carrosséis ou stories: cada formato tem uma função e precisa estar alinhado com a sua comunicação.',
-  },
-  {
-    number: '04',
-    icon: '⚙️',
-    title: 'Montagem do Sistema de Conteúdo',
-    desc: 'O sistema que vai sustentar a sua criação de forma consistente: como usar IA sem perder o seu tom de voz, como criar posts autênticos e como manter a consistência sem depender de inspiração.',
-  },
+const brainRegistered = [
+  'Seu posicionamento',
+  'O DNA da marca',
+  'A forma como sua marca se comunica',
+  'Quem é o seu público',
+  'Os pilares do seu conteúdo',
+  'Direcionamentos para estética e formatos',
+  'Decisões estratégicas que normalmente ficam só na sua cabeça',
 ]
 
-const deliverables = [
-  {
-    icon: '📄',
-    title: 'Arquivo .md — Estudo Completo do Negócio',
-    desc: 'Tom de voz, público, análise de mercado, formatos e posicionamento documentados. Esse arquivo é o briefing que você entrega para qualquer IA, e que garante que o conteúdo gerado vai soar como você, não como todo mundo.',
-  },
-  {
-    icon: '📘',
-    title: 'PDF Orientativo de Criação com IA + Banco de Prompts',
-    desc: 'Como criar um projeto nas principais IAs (ChatGPT, Claude, Gemini) usando o seu estudo de negócio. Passo a passo prático para você começar a usar no mesmo dia.',
-  },
+const during30 = [
+  'Seu arquivo estratégico atualizado',
+  'Calendário para planejar os conteúdos',
+  'Revisão do que foi produzido',
+  'Ajustes no próprio sistema',
+  'Gravações das reuniões para consultar sempre que precisar',
+]
+
+const beforeSteps = [
+  'Você abre o Instagram.',
+  'Pensa no que postar.',
+  'Abre o ChatGPT.',
+  'Escreve um prompt.',
+  'Apaga.',
+  'Reescreve.',
+  'O texto parece igual ao de todo mundo.',
+]
+
+const afterSteps = [
+  'Você abre o seu arquivo.',
+  'Entrega o contexto para a IA.',
+  'Pede o conteúdo.',
+  'A resposta já respeita a personalidade da sua marca.',
+  'Você revisa.',
+  'Publica.',
+]
+
+const takeaways = [
+  { icon: '📂', text: 'Arquivo estratégico da sua marca' },
+  { icon: '🤖', text: 'Arquivo preparado para IA' },
+  { icon: '📅', text: 'Calendário de conteúdo' },
+  { icon: '📊', text: 'Acompanhamento de métricas' },
+  { icon: '🎥', text: 'Gravações das reuniões' },
+  { icon: '💬', text: '30 dias de suporte no WhatsApp' },
+  { icon: '🔄', text: 'Revisão e otimização do sistema' },
 ]
 
 export default function ConsultoriaConteudo() {
@@ -94,18 +129,18 @@ export default function ConsultoriaConteudo() {
           </div>
 
           <h1 className="fade-up delay-2" style={{ maxWidth: 680, textAlign: 'center', margin: '0 auto' }}>
-            Consultoria<br />Sistema de Conteúdo
+            Pare de improvisar a comunicação da sua marca.
           </h1>
-          <p className="fade-up delay-3" style={{ marginTop: 20, maxWidth: 520, fontSize: 17, lineHeight: 1.8, color: '#5a5875' }}>
-            O empurrão estratégico que faltava para você assumir o controle da sua narrativa. Você sai com sistema, estratégia e as ferramentas necessárias para criar conteúdo autêntico.
+          <p className="fade-up delay-3" style={{ marginTop: 20, maxWidth: 560, fontSize: 17, lineHeight: 1.8, color: '#5a5875' }}>
+            Em duas sessões, construímos o sistema da sua marca para que você saiba exatamente o que comunicar, como comunicar e consiga criar conteúdo com consistência — inclusive usando ChatGPT ou Claude no seu próprio tom.
           </p>
 
           <div className="fade-up delay-3" style={{ marginTop: 32, display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href='https://pay.hub.la/m1pd8KVSY0fFS1K57WSe' target="_blank" rel="noopener noreferrer" className="btn" style={{ background: '#3367ca', color: 'white', display: 'flex', alignItems: 'center', gap: 8 }}>
-              Quero a consultoria <ArrowRight />
+              Quero construir meu sistema <ArrowRight />
             </a>
             <a href="#o-que-inclui" className="btn btn-ghost">
-              O que inclui <ArrowRight color="#3e3a53" />
+              Como funciona <ArrowRight color="#3e3a53" />
             </a>
           </div>
         </div>
@@ -148,55 +183,137 @@ export default function ConsultoriaConteudo() {
         </div>
       </section>
 
-      {/* ── O QUE INCLUI ── */}
-      <section id="o-que-inclui" className="section">
+      {/* ── O CÉREBRO DA MARCA ── */}
+      <section id="o-que-inclui" className="section" style={{ paddingTop: 40, overflow: 'hidden' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <div className="tag tag-blue fade-up" style={{ marginBottom: 20 }}>O que inclui</div>
-            <h2 className="fade-up delay-1" style={{ fontSize: 'clamp(22px, 3vw, 34px)' }}>
-              Quatro frentes. Um sistema.
-            </h2>
-            <p className="fade-up delay-2" style={{ fontSize: 15, color: '#8a88a0', maxWidth: 520, margin: '12px auto 0', lineHeight: 1.7 }}>
-              Em duas reuniões nós pensamos juntas em cada etapa da consultoria construindo uma comunicação alinhada com o seu negócio e sua rotina.
+          <div style={{ maxWidth: 720, margin: '0 auto', textAlign: 'center' }}>
+            <div className="fade-up delay-1" style={{ position: 'relative', display: 'inline-block' }}>
+              <span aria-hidden="true" style={{ position: 'absolute', top: -30, left: -74, fontSize: 56, opacity: 0.82, pointerEvents: 'none', zIndex: 0, animation: 'float 6s ease-in-out infinite' }}>🧠</span>
+              <span aria-hidden="true" style={{ position: 'absolute', top: -34, right: -52, fontSize: 28, opacity: 0.6, pointerEvents: 'none', zIndex: 0, animation: 'float-slow 7s ease-in-out infinite', animationDelay: '1.2s' }}>🧠</span>
+              <span aria-hidden="true" style={{ position: 'absolute', bottom: -30, right: -38, fontSize: 40, opacity: 0.75, pointerEvents: 'none', zIndex: 0, animation: 'float 8s ease-in-out infinite', animationDelay: '0.6s' }}>🧠</span>
+              <h2 style={{ fontSize: 'clamp(22px, 3vw, 34px)', margin: 0, position: 'relative', zIndex: 1 }}>
+                O cérebro da sua marca
+              </h2>
+            </div>
+            <p className="fade-up delay-2" style={{ fontSize: 16, color: '#5a5875', lineHeight: 1.8, marginTop: 20 }}>
+              Depois da consultoria, você não sai apenas com uma estratégia. Você sai com o <strong style={{ color: '#3367ca' }}>cérebro da sua marca</strong>: um sistema construído exclusivamente para o seu negócio, que reúne tudo o que orienta a sua comunicação.
+            </p>
+            <p className="fade-up delay-2" style={{ fontSize: 16, color: '#5a5875', lineHeight: 1.8, marginTop: 16 }}>
+              É ele que faz você parar de começar do zero sempre que precisa criar conteúdo.
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))', gap: 20 }}>
-            {pillars.map((p, i) => (
-              <div key={p.number} className={`card fade-up delay-${i + 1}`} style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: 12 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                  <span style={{ fontSize: 11, fontWeight: 800, color: '#3367ca', background: '#dce8f9', borderRadius: 6, padding: '3px 8px', letterSpacing: '0.04em' }}>
-                    {p.number}
-                  </span>
-                  <span style={{ fontSize: 20 }}>{p.icon}</span>
-                </div>
-                <h4 style={{ fontSize: 15, fontWeight: 700, color: '#3e3a53', margin: 0 }}>{p.title}</h4>
-                <p style={{ fontSize: 13, color: '#5a5875', lineHeight: 1.7, margin: 0 }}>{p.desc}</p>
-              </div>
-            ))}
+          <div className="card fade-up delay-2" style={{ maxWidth: 720, margin: '40px auto 0', padding: 'clamp(28px, 4vw, 40px)' }}>
+            <h3 style={{ fontSize: 18, fontWeight: 700, color: '#3e3a53', margin: 0 }}>O que é esse arquivo?</h3>
+            <p style={{ fontSize: 14, color: '#5a5875', lineHeight: 1.75, marginTop: 12 }}>
+              Durante a primeira reunião, construímos juntas toda a lógica da sua comunicação. Tudo isso é organizado em um arquivo estratégico da sua marca. Nele ficam registrados:
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: '20px 0 0', display: 'grid', gap: 10 }}>
+              {brainRegistered.map((item) => (
+                <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: 14, color: '#3e3a53', lineHeight: 1.6 }}>
+                  <span style={{ flexShrink: 0 }}>✨</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p style={{ fontSize: 14, color: '#5a5875', lineHeight: 1.75, margin: '20px 0 0' }}>
+              Em vez de depender da memória ou da inspiração, você passa a ter um sistema que consulta sempre que precisar.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* ── ENTREGÁVEIS ── */}
-      <section className="section" style={{ background: 'rgba(248,249,252,0.8)' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <div className="tag tag-amber fade-up" style={{ marginBottom: 20 }}>O que você leva</div>
+      {/* ── ARQUIVO PARA IA ── */}
+      <section className="section" style={{ background: 'rgba(248,249,252,0.8)', position: 'relative' }}>
+        {/* camada decorativa: fica fixa (sticky) enquanto a seção passa e some ao final dela */}
+        <div aria-hidden="true" style={{ position: 'sticky', top: 0, height: 0, zIndex: 0, pointerEvents: 'none' }}>
+          <ClaudeMark size={72} style={{ position: 'absolute', top: '15vh', left: 28, opacity: 0.9, animation: 'float 6s ease-in-out infinite' }} />
+          <GeminiMark size={56} style={{ position: 'absolute', top: '30vh', right: 32, opacity: 0.9, animation: 'float 8s ease-in-out infinite', animationDelay: '0.4s' }} />
+          <OpenAIMark size={40} style={{ position: 'absolute', top: '55vh', left: 46, opacity: 0.6, animation: 'float-slow 7.5s ease-in-out infinite', animationDelay: '0.8s' }} />
+          <GeminiMark size={30} style={{ position: 'absolute', top: '13vh', right: '20%', opacity: 0.55, animation: 'float-slow 9s ease-in-out infinite', animationDelay: '1.4s' }} />
+          <OpenAIMark size={30} style={{ position: 'absolute', top: '70vh', right: 64, opacity: 0.45, animation: 'float 7s ease-in-out infinite', animationDelay: '1s' }} />
+          <ClaudeMark size={36} style={{ position: 'absolute', top: '72vh', left: '18%', opacity: 0.6, animation: 'float-slow 8.5s ease-in-out infinite', animationDelay: '0.6s' }} />
+        </div>
+
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <div style={{ maxWidth: 720, margin: '0 auto', textAlign: 'center' }}>
             <h2 className="fade-up delay-1" style={{ fontSize: 'clamp(22px, 3vw, 34px)' }}>
-              Entregáveis prontos para usar.
+              Um arquivo pensado para trabalhar com IA
             </h2>
-            <p className="fade-up delay-2" style={{ fontSize: 15, color: '#8a88a0', maxWidth: 520, margin: '12px auto 0', lineHeight: 1.7 }}>
-              Você sai da consultoria com documentos práticos. São ferramentas para criar conteúdo de verdade a partir do dia seguinte, seja para o seu time ou com IA.
+            <p className="fade-up delay-2" style={{ fontSize: 16, color: '#5a5875', lineHeight: 1.8, marginTop: 20 }}>
+              Esse material não fica parado. Ele foi criado para ser usado com ChatGPT, Claude ou qualquer outra inteligência artificial.
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24, maxWidth: 760, margin: '0 auto' }}>
-            {deliverables.map((d, i) => (
-              <div key={d.title} className={`card fade-up delay-${i + 1}`} style={{ padding: '32px 28px', display: 'flex', flexDirection: 'column', gap: 14 }}>
-                <div style={{ fontSize: 36 }}>{d.icon}</div>
-                <h3 style={{ fontSize: 16, fontWeight: 700, color: '#3e3a53', margin: 0 }}>{d.title}</h3>
-                <p style={{ fontSize: 13, color: '#8a88a0', lineHeight: 1.7, margin: 0 }}>{d.desc}</p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20, maxWidth: 820, margin: '48px auto 0' }}>
+            <div className="card fade-up delay-1" style={{ padding: '28px' }}>
+              <span style={{ fontSize: 12, fontWeight: 800, color: '#8a88a0', letterSpacing: '0.06em' }}>ANTES</span>
+              <ol style={{ margin: '16px 0 0', paddingLeft: 18, display: 'grid', gap: 8 }}>
+                {beforeSteps.map((s) => (
+                  <li key={s} style={{ fontSize: 14, color: '#8a88a0', lineHeight: 1.6 }}>{s}</li>
+                ))}
+              </ol>
+            </div>
+            <div className="card fade-up delay-2" style={{ padding: '28px', border: '1px solid rgba(51,103,202,0.25)' }}>
+              <span style={{ fontSize: 12, fontWeight: 800, color: '#3367ca', letterSpacing: '0.06em' }}>DEPOIS</span>
+              <ol style={{ margin: '16px 0 0', paddingLeft: 18, display: 'grid', gap: 8 }}>
+                {afterSteps.map((s) => (
+                  <li key={s} style={{ fontSize: 14, color: '#3e3a53', lineHeight: 1.6 }}>{s}</li>
+                ))}
+              </ol>
+            </div>
+          </div>
+
+          <p className="fade-up delay-2" style={{ fontSize: 16, color: '#3e3a53', lineHeight: 1.8, textAlign: 'center', maxWidth: 560, margin: '32px auto 0', fontWeight: 500 }}>
+            Muito menos tempo tentando descobrir como comunicar. Muito mais tempo comunicando.
+          </p>
+        </div>
+      </section>
+
+      {/* ── O SISTEMA CONTINUA ── */}
+      <section className="section">
+        <div className="container">
+          <div style={{ maxWidth: 720, margin: '0 auto', textAlign: 'center' }}>
+            <h2 className="fade-up delay-1" style={{ fontSize: 'clamp(22px, 3vw, 34px)' }}>
+              E quando a consultoria termina? O sistema continua!
+            </h2>
+            <p className="fade-up delay-2" style={{ fontSize: 16, color: '#5a5875', lineHeight: 1.8, marginTop: 20 }}>
+              Você recebe um espaço organizado para acompanhar toda a evolução da sua comunicação. Durante os 30 dias de aplicação, você conta com:
+            </p>
+          </div>
+
+          <div className="card fade-up delay-2" style={{ maxWidth: 620, margin: '32px auto 0', padding: 'clamp(28px, 4vw, 40px)' }}>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 12 }}>
+              {during30.map((item) => (
+                <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, fontSize: 14, color: '#3e3a53', lineHeight: 1.6 }}>
+                  <span style={{ color: '#3367ca', flexShrink: 0, fontWeight: 700 }}>✔</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <p className="fade-up delay-2" style={{ fontSize: 15, color: '#5a5875', lineHeight: 1.8, textAlign: 'center', maxWidth: 620, margin: '24px auto 0' }}>
+            Ou seja, você não recebe apenas orientação. Recebe uma estrutura que continua funcionando depois que nossos encontros acabam.
+          </p>
+        </div>
+      </section>
+
+      {/* ── O QUE VOCÊ LEVA ── */}
+      <section className="section" style={{ background: 'rgba(248,249,252,0.8)' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: 48 }}>
+            <div className="tag tag-amber fade-up" style={{ marginBottom: 20 }}>O que você leva com você</div>
+            <h2 className="fade-up delay-1" style={{ fontSize: 'clamp(22px, 3vw, 34px)' }}>
+              Tudo isso fica com você
+            </h2>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16, maxWidth: 820, margin: '0 auto' }}>
+            {takeaways.map((t, i) => (
+              <div key={t.text} className={`card fade-up delay-${(i % 3) + 1}`} style={{ padding: '24px', display: 'flex', alignItems: 'center', gap: 14 }}>
+                <span style={{ fontSize: 28, flexShrink: 0 }}>{t.icon}</span>
+                <span style={{ fontSize: 14, fontWeight: 600, color: '#3e3a53', lineHeight: 1.45 }}>{t.text}</span>
               </div>
             ))}
           </div>
@@ -217,9 +334,19 @@ export default function ConsultoriaConteudo() {
           }}>
             <div style={{ position: 'absolute', top: -50, right: -50, width: 280, height: 280, borderRadius: '50%', background: 'radial-gradient(circle, rgba(148,176,237,0.2) 0%, transparent 70%)', filter: 'blur(40px)', pointerEvents: 'none' }} />
             <div style={{ position: 'absolute', bottom: -30, left: -40, width: 220, height: 220, borderRadius: '50%', background: 'radial-gradient(circle, rgba(107,78,230,0.15) 0%, transparent 70%)', filter: 'blur(40px)', pointerEvents: 'none' }} />
-            <h2 style={{ fontSize: 'clamp(22px, 3.5vw, 38px)', color: 'white', maxWidth: 560, textAlign: 'center', margin: '0 auto 16px' }} className="fade-up">
-              Pare de criar conteúdo no escuro e comece a construir uma presença que vende.
-            </h2>
+            <div className="fade-up" style={{ maxWidth: 600, margin: '0 auto 28px' }}>
+              <h2 style={{ fontSize: 'clamp(21px, 3vw, 32px)', color: 'white', lineHeight: 1.3, margin: '0 0 16px' }}>
+                Seu próximo conteúdo não deveria começar do zero.
+              </h2>
+              <p style={{ fontSize: 'clamp(15px, 2vw, 18px)', color: 'rgba(255,255,255,0.82)', lineHeight: 1.8, margin: 0 }}>
+                Ele deveria começar com uma estratégia.<br />
+                Com um posicionamento.<br />
+                Com uma marca que sabe exatamente o que quer comunicar.
+              </p>
+              <p style={{ fontSize: 'clamp(17px, 2.2vw, 21px)', color: 'white', fontWeight: 700, margin: '20px 0 0' }}>
+                É isso que vamos construir juntas.
+              </p>
+            </div>
 
             <span style={{ fontSize: 48, fontWeight: 800, color: 'white' }}>R$ 797</span>
 

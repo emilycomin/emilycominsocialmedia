@@ -28,7 +28,9 @@ export default function Navbar() {
     <>
       <header style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100 }}>
         <div style={{
-          margin: scrolled ? '8px 16px' : '16px 24px',
+          margin: scrolled ? '8px auto' : '16px auto',
+          width: 'fit-content',
+          maxWidth: 'calc(100% - 32px)',
           background: 'rgba(255, 253, 245, 0.88)',
           backdropFilter: 'blur(24px)',
           WebkitBackdropFilter: 'blur(24px)',
@@ -44,10 +46,8 @@ export default function Navbar() {
           <nav style={{
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'space-between',
+            gap: 28,
             height: '64px',
-            maxWidth: '1200px',
-            margin: '0 auto',
           }}>
             {/* Logo */}
             <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>

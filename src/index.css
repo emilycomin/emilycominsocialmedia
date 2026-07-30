@@ -15,11 +15,18 @@
   --blue-light:  #94b0ed;
   --blue-pale:   #dce8f9;
   --lime-green:  #e3fc87;
+  --lime-deep:   #b7d94a;
+  --purple:      #7c63c4;
+  --purple-mid:  #a78bce;
+  --purple-pale: #ede8f9;
   --amber:       #e8a14e;
   --amber-pale:  #fdf0df;
   --text:        #2d2b3f;
   --text-muted:  #8a88a0;
   --white:       #ffffff;
+
+  /* Textura de grão (aura granulada) */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 
   --radius-xs: 8px;
   --radius-sm: 12px;
@@ -46,7 +53,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -179,6 +186,179 @@ input, textarea, select { font-family: var(--font); }
   border: 1px solid rgba(255,255,255,0.8);
 }
 
+/* ── Aura granulada (Vidro Celestial) ── */
+.aura {
+  position: relative;
+  isolation: isolate;
+}
+.aura::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(120% 95% at 12% 18%, rgba(148,176,237,0.55), transparent 55%),
+    radial-gradient(105% 85% at 88% 12%, rgba(167,139,206,0.50), transparent 55%),
+    radial-gradient(130% 105% at 72% 92%, rgba(124,99,196,0.38), transparent 58%),
+    radial-gradient(95% 95% at 22% 88%, rgba(220,232,249,0.60), transparent 58%),
+    var(--bg);
+}
+/* Header: aura mais alta para poder subir ao rolar (parallax) */
+.hero-aura::before {
+  top: -20%;
+  bottom: auto;
+  height: 150%;
+  transform: translate3d(0, var(--aura-y, 0px), 0);
+  will-change: transform;
+}
+
+.aura::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: var(--grain);
+  background-size: 140px 140px;
+  opacity: 0.10;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Estrela de 4 pontas (motivo Vidro Celestial) */
+.star {
+  display: inline-block;
+  color: var(--lime-green);
+  line-height: 1;
+  filter: drop-shadow(0 3px 8px rgba(124,99,196,0.40));
+}
+
+/* Camada de emojis fixos — acompanham a página inteira ao rolar */
+.floating-decor {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+}
+.floating-decor .fd {
+  position: absolute;
+  line-height: 1;
+  user-select: none;
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+/* ── Seção de serviços: título desliza do header + trilho horizontal ── */
+.services-scroll-section {
+  position: relative;
+  height: 300vh; /* distância de rolagem que alimenta as animações */
+  margin-top: -10vh; /* aproxima do header */
+}
+.services-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(32px, 6vh, 64px);
+  overflow: hidden;
+}
+
+/* ── Subtítulo viajante (header → título dos serviços) ──
+   Um único padrão de estilo para os dois slots e para o elemento que viaja,
+   assim o deslocamento é uma translação pura de um ponto até o outro. */
+.travel-sub {
+  font-size: clamp(11px, 3.1vw, 20px);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text-muted);
+  white-space: nowrap;
+  text-align: center;
+  letter-spacing: normal;
+  margin: 0;
+}
+
+/* Slots: só reservam o espaço nos dois pontos da viagem */
+.travel-sub-slot { opacity: 0; }
+.travel-sub-slot.is-shown { opacity: 1; }
+
+/* O elemento que realmente aparece e se desloca na tela */
+.travel-sub-flyer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 80; /* acima das seções, abaixo do navbar (100) */
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* Trilho horizontal de cards */
+.service-track-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+.service-track {
+  display: flex;
+  gap: 28px;
+  width: max-content;
+  /* Primeiro/último card alinhados ao container */
+  padding: 10px max(24px, calc((100vw - var(--max-w)) / 2 + 24px));
+  will-change: transform;
+}
+
+/* Cards de vidro maiores */
+.service-glass-card {
+  flex: 0 0 clamp(300px, 78vw, 420px);
+  display: flex;
+  flex-direction: column;
+  min-height: 340px;
+  padding: 44px 40px;
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.service-glass-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+.service-glass-num {
+  display: inline-flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--blue);
+  margin-bottom: 24px;
+}
+.service-glass-card h3 {
+  font-size: clamp(22px, 2.4vw, 27px);
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+.service-glass-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 0;
+}
+.service-glass-card:nth-child(2) .service-glass-num { color: var(--purple); }
+.service-glass-card:nth-child(4) .service-glass-num { color: var(--amber); }
+
+/* Fallback sem movimento (prefers-reduced-motion): rolagem lateral manual */
+.services-scroll-section.is-static { height: auto; }
+.is-static .services-sticky {
+  position: static;
+  height: auto;
+  padding: clamp(48px, 9vh, 90px) 0;
+}
+.is-static .service-track-viewport { overflow-x: auto; }
+.is-static .service-track { scroll-snap-type: x mandatory; }
+.is-static .service-glass-card { scroll-snap-align: start; }
+
+
 /* ── Form Elements ── */
 .form-group { display: flex; flex-direction: column; gap: 8px; }
 
@@ -262,6 +442,64 @@ input, textarea, select { font-family: var(--font); }
   border: 1px solid rgba(255,255,255,0.8);
 }
 
+/* ── Chat bubbles (estilo iMessage) ── */
+.chat-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.chat-bubble {
+  position: relative;
+  max-width: 82%;
+  padding: 13px 18px;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 500;
+  border-radius: 22px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Recebida — vidro, alinhada à esquerda */
+.chat-bubble-in {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  color: var(--dark);
+  border-bottom-left-radius: 7px;
+}
+
+/* Enviada — azul, alinhada à direita */
+.chat-bubble-out {
+  align-self: flex-end;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 100%);
+  color: var(--white);
+  border-bottom-right-radius: 7px;
+  box-shadow: 0 6px 20px rgba(51, 103, 202, 0.28);
+}
+
+/* Bolha flutuante decorativa (para os cantos) */
+.chat-float {
+  position: absolute;
+  z-index: 2;
+  padding: 12px 18px;
+  border-radius: 22px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: var(--shadow-md);
+  color: var(--dark);
+}
+
 /* ── Icon box ── */
 .icon-box {
   width: 56px;
@@ -295,6 +533,10 @@ input, textarea, select { font-family: var(--font); }
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .chat-float { display: none; }
 }
 
 @media (max-width: 768px) {
