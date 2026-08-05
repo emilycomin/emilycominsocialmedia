@@ -12,6 +12,7 @@ import ConsultoriaConteudo from './pages/ConsultoriaConteudo'
 import MiniCurso from './pages/MiniCurso'
 import AssessoriaComunicacao from './pages/AssessoriaComunicacao'
 import GuiaConteudos from './pages/GuiaConteudos'
+import { PageTransitionProvider, PageShell } from './components/PageTransition'
 import { Analytics } from "@vercel/analytics/react"
 
 function ScrollToTop() {
@@ -27,22 +28,26 @@ export default function App() {
     <>
     <Analytics />  
       <ScrollToTop />
-      <Navbar />
-      <main>
-        <Routes>
-          <Route path="/"         element={<Home />} />
-          <Route path="/solucoes" element={<Solucoes />} />
-          <Route path="/sobre"    element={<SobreMim />} />
-          <Route path="/contato"      element={<Contato />} />
-          <Route path="/infoprodutos" element={<Infoprodutos />} />
-          <Route path="/faq"          element={<FAQ />} />
-          <Route path="/consultoria" element={<ConsultoriaConteudo />} />
-          <Route path="/mini-curso"  element={<MiniCurso />} />
-          <Route path="/assessoria"  element={<AssessoriaComunicacao />} />
-          <Route path="/guia-conteudos" element={<GuiaConteudos />} />
-        </Routes>
-      </main>
-      <Footer />
+      <PageTransitionProvider>
+        <Navbar />
+        <main>
+          <PageShell>
+            <Routes>
+              <Route path="/"         element={<Home />} />
+              <Route path="/solucoes" element={<Solucoes />} />
+              <Route path="/sobre"    element={<SobreMim />} />
+              <Route path="/contato"      element={<Contato />} />
+              <Route path="/infoprodutos" element={<Infoprodutos />} />
+              <Route path="/faq"          element={<FAQ />} />
+              <Route path="/consultoria" element={<ConsultoriaConteudo />} />
+              <Route path="/mini-curso"  element={<MiniCurso />} />
+              <Route path="/assessoria"  element={<AssessoriaComunicacao />} />
+              <Route path="/guia-conteudos" element={<GuiaConteudos />} />
+            </Routes>
+          </PageShell>
+        </main>
+        <Footer />
+      </PageTransitionProvider>
     </>
   )
 }

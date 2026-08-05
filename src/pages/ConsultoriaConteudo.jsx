@@ -136,7 +136,7 @@ export default function ConsultoriaConteudo() {
           </p>
 
           <div className="fade-up delay-3" style={{ marginTop: 32, display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href='https://pay.hub.la/m1pd8KVSY0fFS1K57WSe' target="_blank" rel="noopener noreferrer" className="btn" style={{ background: '#3367ca', color: 'white', display: 'flex', alignItems: 'center', gap: 8 }}>
+            <a href='https://mpago.la/2LeEYLX' target="_blank" rel="noopener noreferrer" className="btn" style={{ background: '#3367ca', color: 'white', display: 'flex', alignItems: 'center', gap: 8 }}>
               Quero construir meu sistema <ArrowRight />
             </a>
             <a href="#o-que-inclui" className="btn btn-ghost">
@@ -352,7 +352,7 @@ export default function ConsultoriaConteudo() {
 
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }} className="fade-up delay-2">
               <a
-                href='https://pay.hub.la/m1pd8KVSY0fFS1K57WSe'
+                href='https://mpago.la/2LeEYLX'
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn"

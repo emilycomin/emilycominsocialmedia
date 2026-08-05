@@ -1,17 +1,18 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { motion, useScroll, useTransform, useMotionValue, useReducedMotion } from 'motion/react'
+import { motion, useScroll, useTransform, useReducedMotion } from 'motion/react'
 import useScrollReveal from '../hooks/useScrollReveal'
+import { usePageTransition } from '../components/PageTransition'
 
 const TITLE1 = ['Você', 'está', 'pronto', 'para', 'transformar', 'visualizações', 'em', 'oportunidades?']
 const TITLE2 = ['O', 'ecossistema', 'completo', 'da', 'sua', 'comunicação', 'digital.']
 
 const services = [
-  { name: 'Assessoria de Comunicação', desc: 'Direção criativa e estratégica para você executar.' },
-  { name: 'Desenvolvimento de Sites', desc: 'Eleve sua presença digital com páginas personalizadas.' },
-  { name: 'Consultoria Sistema de Conteúdo', desc: 'Tenha seu sistema de criação de conteúdo dentro da sua rotina e nunca mais fique sem criar.' },
-  { name: 'Gestão & Estratégia', desc: 'Acompanhamento premium para quem quer apenas aprovar conteúdos.' },
-  { name: 'Captação de Imagem, Vídeos e Cobertura de Eventos', desc: 'Não perca nenhum momento, tenha todos eles registrados.' },
+  { name: 'Assessoria de Comunicação', desc: 'Direção criativa e estratégica para você executar.', to: '/assessoria' },
+  { name: 'Desenvolvimento de Sites', desc: 'Eleve sua presença digital com páginas personalizadas.', to: '/solucoes' },
+  { name: 'Consultoria Sistema de Conteúdo', desc: 'Tenha seu sistema de criação de conteúdo dentro da sua rotina e nunca mais fique sem criar.', to: '/consultoria' },
+  { name: 'Gestão & Estratégia', desc: 'Acompanhamento premium para quem quer apenas aprovar conteúdos.', to: '/solucoes' },
+  { name: 'Captação de Imagem, Vídeos e Cobertura de Eventos', desc: 'Não perca nenhum momento, tenha todos eles registrados.', to: '/solucoes' },
 ]
 
 const SUBTITLE = 'Estratégia, conteúdo e tecnologia trabalhando por você.'
@@ -24,148 +25,33 @@ const ArrowRight = ({ color = 'white' }) => (
   </svg>
 )
 
-const categories = [
-  {
-    icon: '🧠',
-    colorClass: 'icon-box-blue',
-    title: 'Gestão e Estratégia',
-    desc: 'Direção e inteligência de dados para quem precisa de um norte claro no digital.',
-  },
-  {
-    icon: '✍️',
-    colorClass: 'icon-box-amber',
-    title: 'Produção e Escrita',
-    desc: 'Conteúdo, visual e relatórios de alta qualidade que entregam resultado real.',
-  },
-  {
-    icon: '🌐',
-    colorClass: 'icon-box-purple',
-    title: 'Infraestrutura Web',
-    desc: 'Landing pages, site institucional e Google Meu Negócio — ativos que trabalham por você 24h.',
-  },
-  {
-    icon: '⚙️',
-    colorClass: 'icon-box-green',
-    title: 'Ecossistema e Automação',
-    desc: 'Tecnologia para escalar: automações de direct, CRM e hubs de links que não perdem nenhum lead.',
-  },
-]
-
-/* Subtítulo viajante: UM único elemento fixo que sai do lugar dele no header
-   e se desloca na tela até assumir o lugar do título dos serviços.
-   Os dois "slots" (header e serviços) só reservam espaço — quem aparece é este. */
-function TravelingSubtitle({ heroRef, fromRef, toRef }) {
-  const x = useMotionValue(0)
-  const y = useMotionValue(0)
-  const opacity = useMotionValue(0)
-
-  useEffect(() => {
-    const clamp = (v) => Math.min(Math.max(v, 0), 1)
-    // easeInOutCubic — partida e chegada macias
-    const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2)
-    const lerp = (a, b, t) => a + (b - a) * t
-
-    let raf = 0
-    const measure = () => {
-      raf = 0
-      const hero = heroRef.current
-      const from = fromRef.current
-      const to = toRef.current
-      if (!hero || !from || !to) return
-      const heroSticky = hero.querySelector('.hero-sticky')
-      const svcSticky = to.closest('.services-sticky')
-      const svcSection = to.closest('.services-scroll-section')
-      if (!heroSticky || !svcSticky || !svcSection) return
-
-      const sy = window.scrollY
-      const heroTop = hero.getBoundingClientRect().top + sy
-      const heroTravel = Math.max(1, hero.offsetHeight - window.innerHeight)
-
-      // Posição de cada slot DENTRO do seu container fixo. Como os dois
-      // containers ficam presos no topo (top: 0), esses offsets são
-      // exatamente onde cada ponto aparece na tela — endpoints estáveis.
-      const heroBox = heroSticky.getBoundingClientRect()
-      const svcBox = svcSticky.getBoundingClientRect()
-      const fromBox = from.getBoundingClientRect()
-      const toBox = to.getBoundingClientRect()
-      const fromY = fromBox.top - heroBox.top
-      const fromX = fromBox.left - heroBox.left
-      const toY = toBox.top - svcBox.top
-      const toX = toBox.left - svcBox.left
-
-      // Viagem: começa logo após as palavras do hero ficarem coloridas
-      // e termina quando a seção de serviços encosta no topo.
-      const startAt = heroTop + heroTravel * 0.95
-      const endAt = svcSection.getBoundingClientRect().top + sy
-      const t = ease(clamp((sy - startAt) / Math.max(1, endAt - startAt)))
-
-      if (t <= 0) {
-        // Ainda no header: acompanha o slot de partida
-        x.set(heroBox.left + fromX)
-        y.set(heroBox.top + fromY)
-      } else if (t >= 1) {
-        // Já chegou: acompanha o slot de destino (e sai com a seção depois)
-        x.set(svcBox.left + toX)
-        y.set(svcBox.top + toY)
-      } else {
-        // Em viagem: deslocamento contínuo entre dois pontos estáveis da tela
-        x.set(lerp(fromX, toX, t))
-        y.set(lerp(fromY, toY, t))
-      }
-
-      // Aparece junto com o subtítulo do header (depois das palavras coloridas)
-      opacity.set(clamp((sy - (heroTop + heroTravel * 0.60)) / (heroTravel * 0.14)))
-    }
-
-    const onScroll = () => {
-      if (!raf) raf = requestAnimationFrame(measure)
-    }
-
-    measure()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    window.addEventListener('resize', onScroll)
-    return () => {
-      if (raf) cancelAnimationFrame(raf)
-      window.removeEventListener('scroll', onScroll)
-      window.removeEventListener('resize', onScroll)
-    }
-  }, [heroRef, fromRef, toRef, x, y, opacity])
-
-  return (
-    <motion.p className="travel-sub travel-sub-flyer" aria-hidden="true" style={{ x, y, opacity }}>
-      {SUBTITLE}
-    </motion.p>
-  )
+const listVariants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.09, delayChildren: 0.05 } },
+}
+const rowVariants = {
+  hidden: { opacity: 0, y: 26 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
 }
 
-/* Seção de serviços: recebe o slot onde o subtítulo viajante aterrissa
-   e desliza os cards de vidro lateralmente conforme a rolagem vertical. */
-function ServicesShowcase({ titleSlotRef, reduce }) {
+/* Seção de serviços: o subtítulo viajante pousa como título e, logo abaixo,
+   os serviços aparecem em uma lista vertical que entra em cascata ao rolar.
+   Cada linha é um link inteiro (ótimo no mobile) e abre a página com a
+   transição de círculo. Mantém as classes que o subtítulo viajante usa. */
+function ServicesShowcase({ reduce }) {
   const sectionRef = useRef(null)
-  const viewportRef = useRef(null)
-  const trackRef = useRef(null)
-  const [dragRange, setDragRange] = useState(0)
+  const { openPage } = usePageTransition()
 
-  // Progresso ao longo de toda a seção fixa (alimenta o trilho de cards)
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start start', 'end end'],
-  })
-
-  // Mede o quanto o trilho precisa deslizar para revelar todos os cards
-  useEffect(() => {
-    const calc = () => {
-      if (trackRef.current && viewportRef.current) {
-        setDragRange(Math.max(0, trackRef.current.scrollWidth - viewportRef.current.offsetWidth))
+  const Row = reduce ? 'li' : motion.li
+  const List = reduce ? 'ul' : motion.ul
+  const listMotion = reduce
+    ? {}
+    : {
+        variants: listVariants,
+        initial: 'hidden',
+        whileInView: 'show',
+        viewport: { once: true, amount: 0.2 },
       }
-    }
-    calc()
-    window.addEventListener('resize', calc)
-    return () => window.removeEventListener('resize', calc)
-  }, [])
-
-  // Cards: deslizam para a esquerda conforme rola para baixo
-  const trackX = useTransform(scrollYProgress, [0.06, 1], [0, -dragRange])
 
   return (
     <section
@@ -174,29 +60,31 @@ function ServicesShowcase({ titleSlotRef, reduce }) {
     >
       <div className="services-sticky">
         <div className="container">
-          {/* Slot de chegada — reserva o espaço, o texto visível é o viajante */}
-          <h2 ref={titleSlotRef} className={`travel-sub travel-sub-slot${reduce ? ' is-shown' : ''}`}>
-            {SUBTITLE}
-          </h2>
-        </div>
+          <h2 className="services-heading">{SUBTITLE}</h2>
 
-        <div className="service-track-viewport" ref={viewportRef}>
-          <motion.div
-            ref={trackRef}
-            className="service-track"
-            style={reduce ? undefined : { x: trackX }}
-          >
+          <List className="service-list" {...listMotion}>
             {services.map((s, i) => (
-              <article key={s.name} className="service-glass-card">
-                <span className="service-glass-num">
-                  <span className="star" style={{ fontSize: 14, marginRight: 8 }}>✦</span>
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <h3>{s.name}</h3>
-                <p>{s.desc}</p>
-              </article>
+              <Row key={s.name} className="service-row-item" variants={reduce ? undefined : rowVariants}>
+                <Link
+                  to={s.to}
+                  className="service-row"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    openPage(s.to, e.clientX, e.clientY)
+                  }}
+                >
+                  <span className="service-row-num">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="service-row-body">
+                    <span className="service-row-title">{s.name}</span>
+                    <span className="service-row-desc">{s.desc}</span>
+                  </span>
+                  <span className="service-row-arrow" aria-hidden="true">
+                    <ArrowRight color="var(--blue)" />
+                  </span>
+                </Link>
+              </Row>
             ))}
-          </motion.div>
+          </List>
         </div>
       </div>
     </section>
@@ -208,11 +96,10 @@ export default function Home() {
   const heroRef = useRef(null)
   const title1Ref = useRef(null)
   const title2Ref = useRef(null)
-  const subSlotRef = useRef(null)
-  const titleSlotRef = useRef(null)
   const reduce = useReducedMotion()
 
-  // Fundo (aura roxa) do header sobe enquanto a página desce
+  // Fundo azul do header faz parallax: sobe (mais devagar que a rolagem)
+  // enquanto o hero está em cena.
   const { scrollYProgress: heroProgress } = useScroll({
     target: heroRef,
     offset: ['start start', 'end start'],
@@ -257,7 +144,6 @@ export default function Home() {
         const c = clamp(1 - Math.abs(p - peak) / 0.035)
         el.style.color = `rgb(${Math.round(62 + 62 * c)}, ${Math.round(58 + 41 * c)}, ${Math.round(83 + 113 * c)})`
       })
-      // O subtítulo é desenhado pelo <TravelingSubtitle /> (elemento fixo)
     }
 
     update()
@@ -318,58 +204,14 @@ export default function Home() {
                     </span>
                   ))}
                 </p>
-                {/* Slot de partida — reserva o espaço, o texto visível é o viajante */}
-                <p ref={subSlotRef} className={`travel-sub travel-sub-slot${reduce ? ' is-shown' : ''}`}>
-                  {SUBTITLE}
-                </p>
               </div>
             </div>
           </div>
         </div>
       </motion.section>
 
-      {/* Subtítulo que viaja do header até o título dos serviços */}
-      {!reduce && (
-        <TravelingSubtitle heroRef={heroRef} fromRef={subSlotRef} toRef={titleSlotRef} />
-      )}
-
-      {/* ──────────── SERVIÇOS (título vem do header + rolagem lateral) ──────────── */}
-      <ServicesShowcase titleSlotRef={titleSlotRef} reduce={reduce} />
-
-      {/* ──────────── SERVIÇOS PREVIEW ──────────── */}
-      <section className="section">
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: 64 }}>
-            <div className="tag tag-amber fade-up" style={{ marginBottom: 16 }}>✦ O que eu faço</div>
-            <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', marginBottom: 16 }} className="fade-up delay-1">
-              Um ecossistema completo<br />para o seu negócio
-            </h2>
-            <p style={{ fontSize: 17, color: '#8a88a0', maxWidth: 520, margin: '0 auto' }} className="fade-up delay-2">
-              Da estratégia à tecnologia, construo a infraestrutura digital que transforma sua presença em resultado.
-            </p>
-          </div>
-
-          <div className="categories-grid fade-up delay-1">
-            {categories.map((s, i) => (
-              <div key={s.title} className={`card`} style={{ display: 'flex', alignItems: 'flex-start', gap: 20, padding: '32px 28px' }}>
-                <div className={`icon-box ${s.colorClass}`} style={{ flexShrink: 0, width: 56, height: 56, borderRadius: 18, fontSize: 24 }}>
-                  {s.icon}
-                </div>
-                <div>
-                  <h3 style={{ fontSize: 17, marginBottom: 8 }}>{s.title}</h3>
-                  <p style={{ fontSize: 14, color: '#8a88a0', lineHeight: 1.65 }}>{s.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div style={{ textAlign: 'center', marginTop: 48 }} className="fade-up">
-            <Link to="/solucoes" className="btn btn-primary">
-              Montar meu ecossistema <ArrowRight />
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* ──────────── SERVIÇOS ──────────── */}
+      <ServicesShowcase reduce={reduce} />
 
       {/* ──────────── SOBRE TEASER ──────────── */}
       <section style={{ padding: '0 0 100px' }}>
@@ -451,15 +293,9 @@ export default function Home() {
       </section>
 
       <style>{`
-        .categories-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 24px;
-        }
         @media (max-width: 900px) {
           .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
           .dark-section-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
-          .categories-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </div>

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import useScrollReveal from '../hooks/useScrollReveal'
 
 const WA_NUMBER = '+5551991336280'
+const PAY_HREF = 'https://mpago.la/2qzXHEh'
 
 const ArrowRight = ({ color = 'white' }) => (
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -106,7 +107,7 @@ export default function AssessoriaComunicacao() {
           </p>
 
           <div className="fade-up delay-3" style={{ marginTop: 32, display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href={waLink} target="_blank" rel="noopener noreferrer" className="btn" style={{ background: '#3367ca', color: 'white', display: 'flex', alignItems: 'center', gap: 8 }}>
+            <a href={PAY_HREF} target="_blank" rel="noopener noreferrer" className="btn" style={{ background: '#3367ca', color: 'white', display: 'flex', alignItems: 'center', gap: 8 }}>
               Quero a minha assessoria <ArrowRight />
             </a>
             <a href="#como-funciona" className="btn btn-ghost">
@@ -251,20 +252,19 @@ export default function AssessoriaComunicacao() {
 
             <div className="fade-up delay-2" style={{ marginBottom: 36 }}>
               <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', marginBottom: 6 }}>A partir de</span>
-              <span style={{ fontSize: 52, fontWeight: 800, color: 'white', lineHeight: 1 }}>R$ 667</span>
+              <span style={{ fontSize: 52, fontWeight: 800, color: 'white', lineHeight: 1 }}>R$ 867</span>
               <span style={{ fontSize: 16, color: 'rgba(255,255,255,0.6)', fontWeight: 600 }}>/mês</span>
             </div>
 
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }} className="fade-up delay-3">
               <a
-                href={waLink}
+                href={PAY_HREF}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn"
                 style={{ background: '#25D366', color: 'white', boxShadow: '0 4px 20px rgba(37,211,102,0.3)', display: 'flex', alignItems: 'center', gap: 8 }}
               >
-                <WhatsAppIcon />
-                Quero a minha assessoria
+                Quero a minha assessoria <ArrowRight />
               </a>
             </div>
 

@@ -203,13 +203,21 @@ input, textarea, select { font-family: var(--font); }
     radial-gradient(95% 95% at 22% 88%, rgba(220,232,249,0.60), transparent 58%),
     var(--bg);
 }
-/* Header: aura mais alta para poder subir ao rolar (parallax) */
+/* Header: aura azul (cor principal da marca) que faz parallax ao rolar.
+   Confinada ao header — o azul não invade a seção de serviços. */
 .hero-aura::before {
   top: -20%;
   bottom: auto;
-  height: 150%;
+  height: 114%;
   transform: translate3d(0, var(--aura-y, 0px), 0);
   will-change: transform;
+  background:
+    radial-gradient(115% 70% at 12% 16%, rgba(148,176,237,0.62), transparent 58%),
+    radial-gradient(100% 65% at 88% 12%, rgba(85,133,216,0.48), transparent 58%),
+    radial-gradient(120% 72% at 68% 44%, rgba(51,103,202,0.28), transparent 60%),
+    radial-gradient(95% 60% at 24% 40%, rgba(220,232,249,0.58), transparent 60%),
+    radial-gradient(80% 55% at 58% 24%, rgba(167,139,206,0.12), transparent 60%),
+    var(--bg);
 }
 
 .aura::after {
@@ -246,117 +254,103 @@ input, textarea, select { font-family: var(--font); }
   animation: float-slow 6s ease-in-out infinite;
 }
 
-/* ── Seção de serviços: título desliza do header + trilho horizontal ── */
+/* ── Seção de serviços: título desliza do header + lista vertical ── */
 .services-scroll-section {
   position: relative;
-  height: 300vh; /* distância de rolagem que alimenta as animações */
-  margin-top: -10vh; /* aproxima do header */
+  margin-top: -6vh; /* aproxima do header */
+  padding-bottom: clamp(40px, 8vh, 96px);
 }
 .services-sticky {
-  position: sticky;
-  top: 0;
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: clamp(32px, 6vh, 64px);
-  overflow: hidden;
+  gap: clamp(28px, 5vh, 52px);
+  padding-top: clamp(40px, 8vh, 92px);
 }
 
-/* ── Subtítulo viajante (header → título dos serviços) ──
-   Um único padrão de estilo para os dois slots e para o elemento que viaja,
-   assim o deslocamento é uma translação pura de um ponto até o outro. */
-.travel-sub {
-  font-size: clamp(11px, 3.1vw, 20px);
-  font-weight: 500;
-  line-height: 1.5;
-  color: var(--text-muted);
-  white-space: nowrap;
+/* Título da seção de serviços */
+.services-heading {
+  font-size: clamp(20px, 3.4vw, 32px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--dark);
   text-align: center;
-  letter-spacing: normal;
   margin: 0;
 }
 
-/* Slots: só reservam o espaço nos dois pontos da viagem */
-.travel-sub-slot { opacity: 0; }
-.travel-sub-slot.is-shown { opacity: 1; }
-
-/* O elemento que realmente aparece e se desloca na tela */
-.travel-sub-flyer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 80; /* acima das seções, abaixo do navbar (100) */
-  pointer-events: none;
-  will-change: transform, opacity;
-}
-
-/* Trilho horizontal de cards */
-.service-track-viewport {
-  width: 100%;
-  overflow: hidden;
-}
-.service-track {
-  display: flex;
-  gap: 28px;
-  width: max-content;
-  /* Primeiro/último card alinhados ao container */
-  padding: 10px max(24px, calc((100vw - var(--max-w)) / 2 + 24px));
-  will-change: transform;
-}
-
-/* Cards de vidro maiores */
-.service-glass-card {
-  flex: 0 0 clamp(300px, 78vw, 420px);
+/* Lista vertical de serviços */
+.service-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 860px;
   display: flex;
   flex-direction: column;
-  min-height: 340px;
-  padding: 44px 40px;
-  border-radius: var(--radius-xl);
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  box-shadow: var(--shadow-md);
-  transition: transform var(--transition), box-shadow var(--transition);
+  gap: 14px;
 }
-.service-glass-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-}
-.service-glass-num {
-  display: inline-flex;
+.service-row-item { list-style: none; }
+
+/* Cada linha é um link inteiro (alvo de toque grande) */
+.service-row {
+  display: flex;
   align-items: center;
+  gap: clamp(16px, 3vw, 24px);
+  padding: clamp(18px, 3vw, 26px) clamp(20px, 3.2vw, 30px);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: var(--shadow-sm);
+  color: inherit;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition), border-color var(--transition);
+}
+.service-row:hover {
+  transform: translateX(6px);
+  background: rgba(255, 255, 255, 0.78);
+  border-color: rgba(51, 103, 202, 0.28);
+  box-shadow: var(--shadow-md);
+}
+.service-row-num {
+  flex-shrink: 0;
+  width: 38px;
   font-size: 15px;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: var(--blue);
-  margin-bottom: 24px;
 }
-.service-glass-card h3 {
-  font-size: clamp(22px, 2.4vw, 27px);
+.service-row-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.service-row-title {
+  font-size: clamp(17px, 2.2vw, 21px);
+  font-weight: 700;
   line-height: 1.25;
-  margin-bottom: 16px;
+  color: var(--dark);
 }
-.service-glass-card p {
-  font-size: 16px;
-  line-height: 1.7;
+.service-row-desc {
+  font-size: clamp(13.5px, 1.8vw, 15px);
+  line-height: 1.5;
   color: var(--text-muted);
-  margin: 0;
 }
-.service-glass-card:nth-child(2) .service-glass-num { color: var(--purple); }
-.service-glass-card:nth-child(4) .service-glass-num { color: var(--amber); }
+.service-row-arrow {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  color: var(--blue);
+  transition: transform var(--transition);
+}
+.service-row:hover .service-row-arrow { transform: translateX(5px); }
 
-/* Fallback sem movimento (prefers-reduced-motion): rolagem lateral manual */
-.services-scroll-section.is-static { height: auto; }
-.is-static .services-sticky {
-  position: static;
-  height: auto;
-  padding: clamp(48px, 9vh, 90px) 0;
+@media (max-width: 560px) {
+  .service-row { gap: 14px; padding: 16px 18px; }
+  .service-row-num { width: 28px; font-size: 13px; }
 }
-.is-static .service-track-viewport { overflow-x: auto; }
-.is-static .service-track { scroll-snap-type: x mandatory; }
-.is-static .service-glass-card { scroll-snap-align: start; }
 
 
 /* ── Form Elements ── */

@@ -24,7 +24,7 @@ const categories = [
         colorClass: 'icon-box-amber',
         title: 'Assessoria de Comunicação',
         badge: 'Mensal',
-        price: 'A partir de R$ 667/mês',
+        price: 'A partir de R$ 867/mês',
         desc: 'Alguém que olha para os seus números, ajusta a rota e mantém o conteúdo estratégico, para você crescer de forma consistente e não pela sorte.',
         features: ['Análise de métricas com ação (não só relatório)', 'Calendário mensal: ganchos, formatos e CTAs definidos', 'Criação de páginas: 1 página de vendas por mês'],
         learnMoreLink: '/assessoria',
