@@ -229,7 +229,7 @@ export default function Home() {
           }} className="dark-section-grid">
             {/* bg blobs */}
             <div style={{ position: 'absolute', top: -60, right: -60, width: 320, height: 320, borderRadius: '50%', background: 'radial-gradient(circle, rgba(148,176,237,0.18) 0%, transparent 70%)', filter: 'blur(50px)', pointerEvents: 'none' }} />
-            <div style={{ position: 'absolute', bottom: -40, left: -40, width: 250, height: 250, borderRadius: '50%', background: 'radial-gradient(circle, rgba(232,161,78,0.12) 0%, transparent 70%)', filter: 'blur(50px)', pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', bottom: -40, left: -40, width: 250, height: 250, borderRadius: '50%', background: 'radial-gradient(circle, rgba(223,251,120,0.14) 0%, transparent 70%)', filter: 'blur(50px)', pointerEvents: 'none' }} />
 
             {/* Text */}
             <div className="fade-up" style={{ position: 'relative', zIndex: 1 }}>
@@ -263,7 +263,7 @@ export default function Home() {
       <section style={{ padding: '0 0 120px' }}>
         <div className="container">
           <div style={{
-            background: 'linear-gradient(135deg, #dce8f9 0%, #eef4fd 50%, #f5f0fd 100%)',
+            background: 'linear-gradient(135deg, #dce8f9 0%, #eaf1fd 50%, #f0f4ff 100%)',
             borderRadius: 36,
             padding: 'clamp(48px, 6vw, 88px) 40px',
             textAlign: 'center',
@@ -293,6 +293,40 @@ export default function Home() {
       </section>
 
       <style>{`
+        /* ── Redesign visual (paleta do manual: azul, periwinkle, roxo, neon) ── */
+
+        /* Acento neon sob o título da seção — detalhe, não fundo */
+        .services-heading { position: relative; padding-bottom: 20px; }
+        .services-heading::after {
+          content: ""; position: absolute; left: 50%; bottom: 0;
+          transform: translateX(-50%);
+          width: 56px; height: 5px; border-radius: 3px; background: #dffb78;
+          box-shadow: 0 2px 12px rgba(223, 251, 120, 0.55);
+        }
+
+        /* Número do serviço vira chip periwinkle (cor de suporte da marca) */
+        .service-row-num {
+          background: var(--blue-pale);
+          border-radius: 10px;
+          padding: 9px 0;
+          text-align: center;
+          box-shadow: inset 0 0 0 1px rgba(51, 103, 202, 0.12);
+        }
+
+        /* Barra neon que cresce à esquerda no hover — acento pontual */
+        .service-row { position: relative; overflow: hidden; }
+        .service-row::before {
+          content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+          background: #dffb78; border-radius: 0 3px 3px 0;
+          transform: scaleY(0); transform-origin: center;
+          transition: transform var(--transition);
+        }
+        .service-row:hover::before { transform: scaleY(1); }
+        .service-row:hover .service-row-num {
+          background: #e9f0fc;
+          box-shadow: inset 0 0 0 1px rgba(51, 103, 202, 0.28);
+        }
+
         @media (max-width: 900px) {
           .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
           .dark-section-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
